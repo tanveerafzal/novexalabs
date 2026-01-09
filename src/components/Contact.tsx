@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Phone, Send, Clock, Globe } from 'lucide-react'
+import { Mail, MapPin, Phone, Send, Clock, Globe, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
 
 const contactInfo = [
@@ -39,12 +39,39 @@ export default function Contact() {
     service: '',
     message: '',
   })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formState)
-    alert('Thank you for your message! We will get back to you soon.')
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setStatus('success')
+      setFormState({
+        name: '',
+        email: '',
+        company: '',
+        service: '',
+        message: '',
+      })
+    } catch {
+      setStatus('error')
+      setErrorMessage('Failed to send message. Please try again or email us directly.')
+    }
   }
 
   return (
@@ -155,12 +182,36 @@ export default function Contact() {
                   />
                 </div>
 
+                {status === 'success' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-green-500/20 border border-green-500/30">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <p className="text-green-300">Thank you for your message! We&apos;ll get back to you within 24 hours.</p>
+                  </div>
+                )}
+
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/20 border border-red-500/30">
+                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <p className="text-red-300">{errorMessage}</p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all flex items-center justify-center gap-2 group"
+                  disabled={status === 'loading'}
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {status === 'loading' ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
