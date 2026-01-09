@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
               <div className="mt-4 p-4 bg-white/5 rounded-xl">
                 <p className="text-white/90 font-medium">Logithic</p>
                 <p className="text-white/70">Email: privacy@logithic.com</p>
-                <p className="text-white/70">Address: San Francisco, CA</p>
+                <p className="text-white/70">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON L5N 6J5</p>
               </div>
             </section>
           </div>

@@ -181,7 +181,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">14. Governing Law and Dispute Resolution</h2>
               <p className="text-white/70 leading-relaxed">
-                These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms shall be resolved through binding arbitration in San Francisco, California, in accordance with the rules of the American Arbitration Association.
+                These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law provisions. Any dispute arising out of or relating to these Terms shall be resolved through binding arbitration in Mississauga, Ontario, in accordance with the Arbitration Act, 1991 (Ontario).
               </p>
             </section>
 
@@ -221,7 +221,7 @@ export default function TermsOfService() {
               <div className="mt-4 p-4 bg-white/5 rounded-xl">
                 <p className="text-white/90 font-medium">Logithic</p>
                 <p className="text-white/70">Email: legal@logithic.com</p>
-                <p className="text-white/70">Address: San Francisco, CA</p>
+                <p className="text-white/70">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON L5N 6J5</p>
               </div>
             </section>
           </div>

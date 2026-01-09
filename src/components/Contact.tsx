@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: 'San Francisco, CA',
+    value: '6733 Mississauga Rd Suite 700, Mississauga, ON',
     link: '#',
   },
   {
