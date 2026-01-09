@@ -7,7 +7,12 @@ async function getAuthToken(): Promise<string | null> {
   const apiKey = process.env.ULTRAREACH_API_KEY
 
   if (!apiBaseUrl || !username || !password || !apiKey) {
-    console.error('Missing auth environment variables')
+    console.error('Missing auth environment variables:', {
+      ULTRAREACH_API_BASE_URL: !!apiBaseUrl,
+      ULTRAREACH_API_USERNAME: !!username,
+      ULTRAREACH_API_PASSWORD: !!password,
+      ULTRAREACH_API_KEY: !!apiKey,
+    })
     return null
   }
 
@@ -47,7 +52,11 @@ export async function POST(request: NextRequest) {
 
     // Validate environment variables
     if (!emailTo || !businessGroup || !apiBaseUrl) {
-      console.error('Missing required environment variables')
+      console.error('Missing required environment variables:', {
+        CONTACT_EMAIL_TO: !!emailTo,
+        CONTACT_BUSINESS_GROUP: !!businessGroup,
+        ULTRAREACH_API_BASE_URL: !!apiBaseUrl,
+      })
       return NextResponse.json(
         { error: 'Server configuration error' },
         { status: 500 }
