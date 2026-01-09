@@ -1,18 +1,65 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+async function getAuthToken(): Promise<string | null> {
+  const apiBaseUrl = process.env.CONTACT_API_BASE_URL
+  const username = process.env.CONTACT_API_USERNAME
+  const password = process.env.CONTACT_API_PASSWORD
+  const apiKey = process.env.CONTACT_API_KEY
+
+  if (!apiBaseUrl || !username || !password || !apiKey) {
+    console.error('Missing auth environment variables')
+    return null
+  }
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/v1/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        apiKey,
+      }),
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Auth API error:', errorText)
+      return null
+    }
+
+    const data = await response.json()
+    return data.token || null
+  } catch (error) {
+    console.error('Auth error:', error)
+    return null
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Get environment variables
     const emailTo = process.env.CONTACT_EMAIL_TO
     const businessGroup = process.env.CONTACT_BUSINESS_GROUP
-    const apiEndpoint = process.env.CONTACT_API_ENDPOINT
-    const apiToken = process.env.CONTACT_API_TOKEN
+    const apiBaseUrl = process.env.CONTACT_API_BASE_URL
 
     // Validate environment variables
-    if (!emailTo || !businessGroup || !apiEndpoint) {
+    if (!emailTo || !businessGroup || !apiBaseUrl) {
       console.error('Missing required environment variables')
       return NextResponse.json(
         { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
+    // Get auth token
+    const authToken = await getAuthToken()
+    if (!authToken) {
+      console.error('Failed to get auth token')
+      return NextResponse.json(
+        { error: 'Authentication failed' },
         { status: 500 }
       )
     }
@@ -38,18 +85,12 @@ export async function POST(request: NextRequest) {
       body: bodyLines,
     }
 
-    const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
-    }
-
-    // Add auth token if configured
-    if (apiToken) {
-      headers['Authorization'] = `Bearer ${apiToken}`
-    }
-
-    const response = await fetch(apiEndpoint, {
+    const response = await fetch(`${apiBaseUrl}/v1/messaging/send-email`, {
       method: 'POST',
-      headers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${authToken}`,
+      },
       body: JSON.stringify(payload),
     })
 
