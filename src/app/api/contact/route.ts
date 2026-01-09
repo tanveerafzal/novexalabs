@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 async function getAuthToken(): Promise<string | null> {
-  const apiBaseUrl = process.env.CONTACT_API_BASE_URL
+  const apiBaseUrl = process.env.ULTRAREACH_API_BASE_URL
   const username = process.env.ULTRAREACH_API_USERNAME
   const password = process.env.ULTRAREACH_API_PASSWORD
   const apiKey = process.env.ULTRAREACH_API_KEY
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     // Get environment variables
     const emailTo = process.env.CONTACT_EMAIL_TO
     const businessGroup = process.env.CONTACT_BUSINESS_GROUP
-    const apiBaseUrl = process.env.CONTACT_API_BASE_URL
+    const apiBaseUrl = process.env.ULTRAREACH_API_BASE_URL
 
     // Validate environment variables
     if (!emailTo || !businessGroup || !apiBaseUrl) {
