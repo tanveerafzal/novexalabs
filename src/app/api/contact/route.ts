@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 async function getAuthToken(): Promise<string | null> {
   const apiBaseUrl = process.env.CONTACT_API_BASE_URL
-  const username = process.env.CONTACT_API_USERNAME
-  const password = process.env.CONTACT_API_PASSWORD
-  const apiKey = process.env.CONTACT_API_KEY
+  const username = process.env.ULTRAREACH_API_USERNAME
+  const password = process.env.ULTRAREACH_API_PASSWORD
+  const apiKey = process.env.ULTRAREACH_API_KEY
 
   if (!apiBaseUrl || !username || !password || !apiKey) {
     console.error('Missing auth environment variables')
