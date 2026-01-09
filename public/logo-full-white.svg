@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <linearGradient id="logoGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60A5FA"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon -->
+  <g transform="translate(10, 10) scale(0.156)">
+    <!-- Background rounded square -->
+    <rect x="32" y="32" width="448" height="448" rx="80" ry="80" fill="url(#logoGradientLight)"/>
+    
+    <!-- Stylized "L" shape -->
+    <path d="M 160 120 L 160 320 L 352 320 L 352 280 L 200 280 L 200 120 Z" fill="#FFFFFF"/>
+    
+    <!-- Tech accent - circuit nodes -->
+    <circle cx="160" cy="120" r="16" fill="#FFFFFF"/>
+    <circle cx="352" cy="320" r="16" fill="#FFFFFF"/>
+    
+    <!-- Code brackets -->
+    <path d="M 280 160 L 320 200 L 280 240" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+    <path d="M 380 160 L 340 200 L 380 240" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+    
+    <!-- Bottom accent bar -->
+    <rect x="160" y="360" width="192" height="32" rx="16" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="256" cy="376" r="8" fill="url(#logoGradientLight)"/>
+    <circle cx="296" cy="376" r="8" fill="url(#logoGradientLight)"/>
+    <circle cx="216" cy="376" r="8" fill="url(#logoGradientLight)"/>
+  </g>
+  
+  <!-- Company Name - White for dark backgrounds -->
+  <text x="105" y="62" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="bold" fill="#FFFFFF">
+    Logithic
+  </text>
+  
+  <!-- Tagline -->
+  <text x="105" y="82" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#94A3B8" letter-spacing="2">
+    IT CONSULTING &amp; SOFTWARE
+  </text>
+</svg>
