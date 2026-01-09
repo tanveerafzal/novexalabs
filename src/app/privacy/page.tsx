@@ -1,11 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Cpu } from 'lucide-react'
+import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Logithic',
-  description: 'Learn how Logithic collects, uses, and protects your personal information.',
-}
+export const metadata: Metadata = generateSeoMetadata(
+  'Privacy Policy',
+  'Learn how Logithic collects, uses, and protects your personal information. Our commitment to data privacy and security.',
+  '/privacy',
+  ['privacy policy', 'data protection', 'GDPR', 'data privacy', 'personal information']
+)
 
 export default function PrivacyPolicy() {
   return (

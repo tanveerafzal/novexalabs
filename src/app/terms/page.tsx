@@ -1,11 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Cpu } from 'lucide-react'
+import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Logithic',
-  description: 'Read the terms and conditions governing the use of Logithic services.',
-}
+export const metadata: Metadata = generateSeoMetadata(
+  'Terms of Service',
+  'Read the terms and conditions governing the use of Logithic software development and staffing services.',
+  '/terms',
+  ['terms of service', 'terms and conditions', 'legal agreement', 'service agreement']
+)
 
 export default function TermsOfService() {
   return (
