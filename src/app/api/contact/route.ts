@@ -2,6 +2,21 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {
+    // Get environment variables
+    const emailTo = process.env.CONTACT_EMAIL_TO
+    const businessGroup = process.env.CONTACT_BUSINESS_GROUP
+    const apiEndpoint = process.env.CONTACT_API_ENDPOINT
+    const apiToken = process.env.CONTACT_API_TOKEN
+
+    // Validate environment variables
+    if (!emailTo || !businessGroup || !apiEndpoint) {
+      console.error('Missing required environment variables')
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
     const data = await request.json()
     const { name, email, company, service, message } = data
 
@@ -17,17 +32,24 @@ export async function POST(request: NextRequest) {
     ].filter(Boolean).join('\n')
 
     const payload = {
-      businessGroup: 'Logithic',
-      to: 'tanveerafzal@gmail.com',
+      businessGroup,
+      to: emailTo,
       subject: `New Contact Form Submission from ${name}`,
       body: bodyLines,
     }
 
-    const response = await fetch('https://ultrareach360-api.vercel.app/v1/messaging/send-email', {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    }
+
+    // Add auth token if configured
+    if (apiToken) {
+      headers['Authorization'] = `Bearer ${apiToken}`
+    }
+
+    const response = await fetch(apiEndpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify(payload),
     })
 
