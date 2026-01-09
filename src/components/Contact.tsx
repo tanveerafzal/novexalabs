@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: '6733 Mississauga Rd Suite 700, Mississauga, ON',
+    value: '6733 Mississauga Rd Suite 700, Mississauga, ON, Canada',
     link: '#',
   },
   {
