@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-6">
               <Cpu className="w-8 h-8 text-primary-400" />
-              <span className="text-2xl font-bold text-gradient">Logithic</span>
+              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </a>
             <p className="text-white/60 mb-6 max-w-sm">
               Empowering businesses with AI-driven software development and elite
@@ -142,7 +142,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">
-              &copy; {new Date().getFullYear()} Logithic. All rights reserved.
+              &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
             </p>
             <p className="text-white/40 text-sm">
               Crafted with AI-powered precision

@@ -43,13 +43,13 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
-              About Logithic
+              About Logithic Labs
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Building Tomorrow&apos;s <span className="text-gradient">Digital Solutions</span>
             </h2>
             <p className="text-lg text-white/70 mb-8 leading-relaxed">
-              Logithic is a next-generation technology company that combines human expertise
+              Logithic Labs is a next-generation technology company that combines human expertise
               with AI-powered tools to deliver exceptional software solutions. We specialize
               in custom development, team augmentation, and staffing services that help
               businesses scale faster and smarter.

@@ -5,7 +5,7 @@ import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSeoMetadata(
   'Privacy Policy',
-  'Learn how Logithic collects, uses, and protects your personal information. Our commitment to data privacy and security.',
+  'Learn how Logithic Labs Inc collects, uses, and protects your personal information. Our commitment to data privacy and security.',
   '/privacy',
   ['privacy policy', 'data protection', 'GDPR', 'data privacy', 'personal information']
 )
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-400" />
-              <span className="text-2xl font-bold text-gradient">Logithic</span>
+              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </Link>
             <Link
               href="/"
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction</h2>
               <p className="text-white/70 leading-relaxed">
-                Logithic (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or engage with us in any way.
+                Logithic Labs Inc (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or engage with us in any way.
               </p>
               <p className="text-white/70 leading-relaxed mt-4">
                 By accessing or using our services, you agree to this Privacy Policy. If you do not agree with our policies and practices, please do not use our services.
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-white/5 rounded-xl">
-                <p className="text-white/90 font-medium">Logithic</p>
+                <p className="text-white/90 font-medium">Logithic Labs Inc</p>
                 <p className="text-white/70">Email: privacy@logithic.com</p>
                 <p className="text-white/70">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/40 text-sm">
-          &copy; {new Date().getFullYear()} Logithic. All rights reserved.
+          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
         </div>
       </footer>
     </main>

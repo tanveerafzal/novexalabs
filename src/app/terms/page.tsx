@@ -5,7 +5,7 @@ import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSeoMetadata(
   'Terms of Service',
-  'Read the terms and conditions governing the use of Logithic software development and staffing services.',
+  'Read the terms and conditions governing the use of Logithic Labs Inc software development and staffing services.',
   '/terms',
   ['terms of service', 'terms and conditions', 'legal agreement', 'service agreement']
 )
@@ -19,7 +19,7 @@ export default function TermsOfService() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-400" />
-              <span className="text-2xl font-bold text-gradient">Logithic</span>
+              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </Link>
             <Link
               href="/"
@@ -42,7 +42,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">1. Agreement to Terms</h2>
               <p className="text-white/70 leading-relaxed">
-                Welcome to Logithic. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website, products, and services (collectively, &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
+                Welcome to Logithic Labs Inc. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website, products, and services (collectively, &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
               </p>
               <p className="text-white/70 leading-relaxed mt-4">
                 If you are using our Services on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms, in which case &quot;you&quot; or &quot;your&quot; shall refer to such entity.
@@ -52,7 +52,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Services</h2>
               <p className="text-white/70 leading-relaxed mb-4">
-                Logithic provides software development, staffing, and technology consulting services, including but not limited to:
+                Logithic Labs Inc provides software development, staffing, and technology consulting services, including but not limited to:
               </p>
               <ul className="list-disc list-inside text-white/70 space-y-2 ml-4">
                 <li>Custom software development and engineering</li>
@@ -98,7 +98,7 @@ export default function TermsOfService() {
 
               <h3 className="text-xl font-medium text-white/90 mb-3">6.1 Our Intellectual Property</h3>
               <p className="text-white/70 leading-relaxed mb-4">
-                The Services, including all content, features, and functionality, are owned by Logithic and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.
+                The Services, including all content, features, and functionality, are owned by Logithic Labs Inc and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.
               </p>
 
               <h3 className="text-xl font-medium text-white/90 mb-3">6.2 Client Work Product</h3>
@@ -155,7 +155,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">11. Indemnification</h2>
               <p className="text-white/70 leading-relaxed">
-                You agree to indemnify, defend, and hold harmless Logithic and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of the Services, violation of these Terms, or infringement of any third-party rights.
+                You agree to indemnify, defend, and hold harmless Logithic Labs Inc and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of the Services, violation of these Terms, or infringement of any third-party rights.
               </p>
             </section>
 
@@ -212,7 +212,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-white mb-4">18. Entire Agreement</h2>
               <p className="text-white/70 leading-relaxed">
-                These Terms, together with the Privacy Policy and any applicable Service Agreements, constitute the entire agreement between you and Logithic regarding the use of our Services and supersede all prior agreements and understandings.
+                These Terms, together with the Privacy Policy and any applicable Service Agreements, constitute the entire agreement between you and Logithic Labs Inc regarding the use of our Services and supersede all prior agreements and understandings.
               </p>
             </section>
 
@@ -222,7 +222,7 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-white/5 rounded-xl">
-                <p className="text-white/90 font-medium">Logithic</p>
+                <p className="text-white/90 font-medium">Logithic Labs Inc</p>
                 <p className="text-white/70">Email: legal@logithic.com</p>
                 <p className="text-white/70">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
@@ -234,7 +234,7 @@ export default function TermsOfService() {
       {/* Footer */}
       <footer className="border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/40 text-sm">
-          &copy; {new Date().getFullYear()} Logithic. All rights reserved.
+          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
         </div>
       </footer>
     </main>

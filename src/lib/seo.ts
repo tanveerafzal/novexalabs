@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 const siteConfig = {
-  name: 'Logithic',
+  name: 'Logithic Labs Inc',
   description: 'Transform your business with cutting-edge AI-driven software development, dedicated teams, and elite staffing solutions tailored to your needs.',
   url: 'https://logithic.com',
   ogImage: 'https://logithic.com/og-image.png',
@@ -27,9 +27,9 @@ const siteConfig = {
     'offshore development',
     'nearshore development',
   ],
-  authors: [{ name: 'Logithic', url: 'https://logithic.com' }],
-  creator: 'Logithic',
-  publisher: 'Logithic',
+  authors: [{ name: 'Logithic Labs Inc', url: 'https://logithic.com' }],
+  creator: 'Logithic Labs Inc',
+  publisher: 'Logithic Labs Inc',
   category: 'Technology',
   locale: 'en_CA',
   address: {

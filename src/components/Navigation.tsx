@@ -38,7 +38,7 @@ export default function Navigation() {
               <Cpu className="w-8 h-8 text-primary-400 group-hover:text-accent-400 transition-colors" />
               <div className="absolute inset-0 bg-primary-400/30 blur-lg group-hover:bg-accent-400/30 transition-colors" />
             </div>
-            <span className="text-2xl font-bold text-gradient">Logithic</span>
+            <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
           </a>
 
           {/* Desktop Navigation */}

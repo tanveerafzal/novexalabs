@@ -253,7 +253,7 @@ export default function Contact() {
 
             {/* Quick Stats */}
             <div className="glass rounded-2xl p-6">
-              <h4 className="text-lg font-semibold text-white mb-4">Why Choose Logithic?</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Why Choose Logithic Labs?</h4>
               <ul className="space-y-3">
                 {[
                   'Response within 24 hours',
