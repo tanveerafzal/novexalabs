@@ -37,6 +37,7 @@ export default function Contact() {
     email: '',
     phone: '',
     company: '',
+    companySize: '',
     service: '',
     message: '',
   })
@@ -67,6 +68,7 @@ export default function Contact() {
         email: '',
         phone: '',
         company: '',
+        companySize: '',
         service: '',
         message: '',
       })
@@ -166,21 +168,39 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm text-white/60 mb-2">Service Needed</label>
-                  <select
-                    value={formState.service}
-                    onChange={(e) => setFormState({ ...formState, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary-500 transition-colors"
-                  >
-                    <option value="" className="bg-gray-900">Select a service</option>
-                    <option value="custom-development" className="bg-gray-900">Custom Development</option>
-                    <option value="dedicated-teams" className="bg-gray-900">Dedicated Teams</option>
-                    <option value="ai-solutions" className="bg-gray-900">AI/ML Solutions</option>
-                    <option value="staffing" className="bg-gray-900">IT Staffing</option>
-                    <option value="cloud" className="bg-gray-900">Cloud Services</option>
-                    <option value="other" className="bg-gray-900">Other</option>
-                  </select>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm text-white/60 mb-2">Company Size</label>
+                    <select
+                      value={formState.companySize}
+                      onChange={(e) => setFormState({ ...formState, companySize: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                    >
+                      <option value="" className="bg-gray-900">Select company size</option>
+                      <option value="1-10" className="bg-gray-900">1-10 employees</option>
+                      <option value="11-50" className="bg-gray-900">11-50 employees</option>
+                      <option value="51-200" className="bg-gray-900">51-200 employees</option>
+                      <option value="201-500" className="bg-gray-900">201-500 employees</option>
+                      <option value="501-1000" className="bg-gray-900">501-1000 employees</option>
+                      <option value="1000+" className="bg-gray-900">1000+ employees</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-white/60 mb-2">Service Needed</label>
+                    <select
+                      value={formState.service}
+                      onChange={(e) => setFormState({ ...formState, service: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                    >
+                      <option value="" className="bg-gray-900">Select a service</option>
+                      <option value="custom-development" className="bg-gray-900">Custom Development</option>
+                      <option value="dedicated-teams" className="bg-gray-900">Dedicated Teams</option>
+                      <option value="ai-solutions" className="bg-gray-900">AI/ML Solutions</option>
+                      <option value="staffing" className="bg-gray-900">IT Staffing</option>
+                      <option value="cloud" className="bg-gray-900">Cloud Services</option>
+                      <option value="other" className="bg-gray-900">Other</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
