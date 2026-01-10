@@ -74,12 +74,13 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await request.json()
-    const { name, email, company, service, message } = data
+    const { name, email, phone, company, service, message } = data
 
     // Build the body with name: value format
     const bodyLines = [
       `Name: ${name}`,
       `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
       company ? `Company: ${company}` : null,
       service ? `Service Needed: ${service}` : null,
       ``,

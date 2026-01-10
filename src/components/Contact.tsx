@@ -35,6 +35,7 @@ export default function Contact() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     service: '',
     message: '',
@@ -64,6 +65,7 @@ export default function Contact() {
       setFormState({
         name: '',
         email: '',
+        phone: '',
         company: '',
         service: '',
         message: '',
@@ -143,6 +145,16 @@ export default function Contact() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
+                    <label className="block text-sm text-white/60 mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      value={formState.phone}
+                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-primary-500 transition-colors"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                  <div>
                     <label className="block text-sm text-white/60 mb-2">Company</label>
                     <input
                       type="text"
@@ -152,22 +164,23 @@ export default function Contact() {
                       placeholder="Your Company"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm text-white/60 mb-2">Service Needed</label>
-                    <select
-                      value={formState.service}
-                      onChange={(e) => setFormState({ ...formState, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary-500 transition-colors"
-                    >
-                      <option value="" className="bg-gray-900">Select a service</option>
-                      <option value="custom-development" className="bg-gray-900">Custom Development</option>
-                      <option value="dedicated-teams" className="bg-gray-900">Dedicated Teams</option>
-                      <option value="ai-solutions" className="bg-gray-900">AI/ML Solutions</option>
-                      <option value="staffing" className="bg-gray-900">IT Staffing</option>
-                      <option value="cloud" className="bg-gray-900">Cloud Services</option>
-                      <option value="other" className="bg-gray-900">Other</option>
-                    </select>
-                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm text-white/60 mb-2">Service Needed</label>
+                  <select
+                    value={formState.service}
+                    onChange={(e) => setFormState({ ...formState, service: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                  >
+                    <option value="" className="bg-gray-900">Select a service</option>
+                    <option value="custom-development" className="bg-gray-900">Custom Development</option>
+                    <option value="dedicated-teams" className="bg-gray-900">Dedicated Teams</option>
+                    <option value="ai-solutions" className="bg-gray-900">AI/ML Solutions</option>
+                    <option value="staffing" className="bg-gray-900">IT Staffing</option>
+                    <option value="cloud" className="bg-gray-900">Cloud Services</option>
+                    <option value="other" className="bg-gray-900">Other</option>
+                  </select>
                 </div>
 
                 <div>
