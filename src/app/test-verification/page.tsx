@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Script from 'next/script'
 import {
   ArrowLeft,
   Cpu,
@@ -9,13 +10,34 @@ import {
   CheckCircle2,
   Copy,
   Play,
+  Loader2,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
+
+declare global {
+  interface Window {
+    TrustCredo: {
+      init: (config: {
+        apiKey: string
+        onSuccess: (result: { extractedData: { fullName: string }; verificationId: string }) => void
+        onFailure: (result: unknown) => void
+        onClose: () => void
+      }) => void
+      startVerification: (params: {
+        userId: string
+        userEmail: string
+        userName: string
+      }) => void
+    }
+  }
+}
+
+const PARTNER_API_KEY = 'bd61b049-4201-412f-8c11-4236adf307e2'
 
 const codeSnippets = {
   step1: `<script src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"></script>`,
   step2: `TrustCredo.init({
-  apiKey: 'bd61b049-4201-412f-8c11-4236adf307e2',
+  apiKey: '${PARTNER_API_KEY}',
 
   onSuccess: function(result) {
     console.log('Verified!', result.extractedData.fullName);
@@ -73,8 +95,60 @@ function CodeBlock({ code, language = 'javascript' }: { code: string; language?:
 }
 
 export default function TestVerificationPage() {
+  const [sdkReady, setSdkReady] = useState(false)
+  const [verificationStatus, setVerificationStatus] = useState<'idle' | 'loading' | 'success' | 'failed'>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
+
+  const handleScriptLoad = useCallback(() => {
+    if (window.TrustCredo) {
+      window.TrustCredo.init({
+        apiKey: PARTNER_API_KEY,
+
+        onSuccess: (result) => {
+          console.log('Verified!', result.extractedData.fullName)
+          setVerificationStatus('success')
+          setStatusMessage(`Verification successful! Welcome, ${result.extractedData.fullName}`)
+        },
+
+        onFailure: (result) => {
+          console.log('Failed', result)
+          setVerificationStatus('failed')
+          setStatusMessage('Verification failed. Please try again.')
+        },
+
+        onClose: () => {
+          console.log('User closed modal')
+          if (verificationStatus === 'loading') {
+            setVerificationStatus('idle')
+            setStatusMessage('')
+          }
+        },
+      })
+      setSdkReady(true)
+    }
+  }, [verificationStatus])
+
+  const handleStartVerification = () => {
+    if (window.TrustCredo) {
+      setVerificationStatus('loading')
+      setStatusMessage('')
+      window.TrustCredo.startVerification({
+        userId: 'demo_user_' + Date.now(),
+        userEmail: 'demo@example.com',
+        userName: 'Demo User',
+      })
+    }
+  }
+
   return (
     <main className="min-h-screen">
+      {/* Load TrustCredo SDK */}
+      <Script
+        src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"
+        onLoad={handleScriptLoad}
+        strategy="afterInteractive"
+      />
+
       {/* Header */}
       <header className="glass-strong sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -232,14 +306,38 @@ export default function TestVerificationPage() {
                 Click the button below to see the verification flow in action.
               </p>
               <button
-                id="verify-btn"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+                onClick={handleStartVerification}
+                disabled={!sdkReady || verificationStatus === 'loading'}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <Play className="w-5 h-5" />
-                Start Verification
+                {verificationStatus === 'loading' ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Verifying...
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-5 h-5" />
+                    Start Verification
+                  </>
+                )}
               </button>
+
+              {/* Status Message */}
+              {statusMessage && (
+                <div className={`mt-4 p-4 rounded-xl ${
+                  verificationStatus === 'success'
+                    ? 'bg-green-500/20 border border-green-500/30'
+                    : 'bg-red-500/20 border border-red-500/30'
+                }`}>
+                  <p className={verificationStatus === 'success' ? 'text-green-400' : 'text-red-400'}>
+                    {statusMessage}
+                  </p>
+                </div>
+              )}
+
               <p className="text-white/40 text-sm mt-4">
-                Note: This is a demo button. Configure your API key to enable live verification.
+                {sdkReady ? 'SDK loaded and ready.' : 'Loading SDK...'}
               </p>
             </div>
           </motion.div>
@@ -270,7 +368,7 @@ export default function TestVerificationPage() {
 
   <script>
     TrustCredo.init({
-      apiKey: 'bd61b049-4201-412f-8c11-4236adf307e2',
+      apiKey: '${PARTNER_API_KEY}',
 
       onSuccess: function(result) {
         console.log('Verified!', result.extractedData.fullName);
