@@ -52,8 +52,7 @@ export default function Footer() {
               <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </a>
             <p className="text-white/60 mb-6 max-w-sm">
-              Empowering businesses with AI-driven software development and elite
-              tech talent to build the future, today.
+              Intelligence Engineered. Delivered Now.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
