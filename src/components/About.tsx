@@ -1,130 +1,95 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle, Award, Target, Lightbulb } from 'lucide-react'
-
-const values = [
-  {
-    icon: Target,
-    title: 'Mission-Driven',
-    description: 'We partner with businesses to accelerate their digital transformation through innovative technology solutions.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Innovation First',
-    description: 'Constantly exploring emerging technologies like AI, blockchain, and cloud-native architectures.',
-  },
-  {
-    icon: Award,
-    title: 'Excellence',
-    description: 'Committed to delivering high-quality solutions that exceed expectations and drive real results.',
-  },
-]
-
-const highlights = [
-  'Founded by ex-FAANG engineers',
-  'Global talent pool of 500+ developers',
-  'ISO 27001 & SOC 2 Certified',
-  'Agile & DevOps best practices',
-  'AI-enhanced development workflow',
-  '10+ years of industry experience',
-]
+import Link from 'next/link'
+import { Zap, Eye, ArrowRight } from 'lucide-react'
 
 export default function About() {
   return (
     <section id="about" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+            About Us
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            The DNA of <span className="text-gradient">Logithic Labs</span>
+          </h2>
+        </motion.div>
+
+        {/* Backstory */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-4xl mx-auto mb-12"
+        >
+          <div className="glass rounded-3xl p-8 md:p-10 text-center">
+            <p className="text-lg text-white/70 leading-relaxed">
+              Logithic Labs was founded on a simple premise: <span className="text-white font-semibold">Experience matters, but speed is currency.</span> Founded by two industry veterans with over 50 years of combined experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. Now, we bring that enterprise-grade discipline to the agile digital world.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Mission & Vision Cards */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="glass rounded-3xl p-8 md:p-10"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
-              About Logithic Labs
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Building Tomorrow&apos;s <span className="text-gradient">Digital Solutions</span>
-            </h2>
-            <p className="text-lg text-white/70 mb-8 leading-relaxed">
-              Logithic Labs is a next-generation technology company that combines human expertise
-              with AI-powered tools to deliver exceptional software solutions. We specialize
-              in custom development, team augmentation, and staffing services that help
-              businesses scale faster and smarter.
-            </p>
-
-            {/* Highlights */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {highlights.map((highlight) => (
-                <div key={highlight} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                  <span className="text-white/80">{highlight}</span>
-                </div>
-              ))}
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 p-3 mb-6">
+              <Zap className="w-full h-full text-white" />
             </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all"
-            >
-              Partner With Us
-            </a>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+            <p className="text-lg text-white/70 leading-relaxed">
+              <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact logic that powers the future.
+            </p>
           </motion.div>
 
-          {/* Right Column - Values */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="glass rounded-3xl p-8 md:p-10"
           >
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass rounded-2xl p-6 hover:bg-white/10 transition-all group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 p-2.5 group-hover:scale-110 transition-transform">
-                    <value.icon className="w-full h-full text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {value.title}
-                    </h3>
-                    <p className="text-white/60 leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Stats Card */}
-            <div className="glass-strong rounded-2xl p-6">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-gradient">8+</div>
-                  <div className="text-sm text-white/60">Years</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-gradient">500+</div>
-                  <div className="text-sm text-white/60">Engineers</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-gradient">20+</div>
-                  <div className="text-sm text-white/60">Countries</div>
-                </div>
-              </div>
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-500 to-pink-500 p-3 mb-6">
+              <Eye className="w-full h-full text-white" />
             </div>
+            <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+            <p className="text-lg text-white/70 leading-relaxed">
+              Be the essential partner for organizations leading in the AI era — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
+            </p>
           </motion.div>
         </div>
+
+        {/* CTA to full About page */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
+        >
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105 group"
+          >
+            Explore Our Values & Expertise
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

@@ -329,7 +329,7 @@ export default function TestVerificationPage() {
             <div className="glass rounded-2xl p-8">
               <h3 className="text-xl font-bold text-white mb-4">Try It Out</h3>
               <p className="text-white/60 mb-6">
-                Click the button below to see the verification flow in action.
+                Click the button below to see the verification flow in action. 
               </p>
               <button
                 onClick={handleStartVerification}
