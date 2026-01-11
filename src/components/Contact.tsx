@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Phone, Send, Clock, Globe, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, MapPin, Phone, Send, Clock, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 import { useState } from 'react'
 
 const contactInfo = [
@@ -271,17 +271,6 @@ export default function Contact() {
                   <p className="text-white/60">{info.value}</p>
                 </a>
               ))}
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="glass rounded-2xl p-8 h-64 flex items-center justify-center">
-              <div className="text-center">
-                <Globe className="w-16 h-16 text-primary-400/50 mx-auto mb-4" />
-                <p className="text-white/60">Serving clients globally</p>
-                <p className="text-sm text-white/40 mt-2">
-                  With teams across North America, Europe, and Asia
-                </p>
-              </div>
             </div>
 
             {/* Quick Stats */}
