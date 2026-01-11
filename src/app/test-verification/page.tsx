@@ -15,7 +15,7 @@ import { useState } from 'react'
 const codeSnippets = {
   step1: `<script src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"></script>`,
   step2: `TrustCredo.init({
-  apiKey: 'PARTNER_API_KEY',
+  apiKey: 'bd61b049-4201-412f-8c11-4236adf307e2',
 
   onSuccess: function(result) {
     console.log('Verified!', result.extractedData.fullName);
@@ -270,7 +270,7 @@ export default function TestVerificationPage() {
 
   <script>
     TrustCredo.init({
-      apiKey: 'PARTNER_API_KEY',
+      apiKey: 'bd61b049-4201-412f-8c11-4236adf307e2',
 
       onSuccess: function(result) {
         console.log('Verified!', result.extractedData.fullName);
