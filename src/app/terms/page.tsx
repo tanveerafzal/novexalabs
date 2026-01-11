@@ -12,18 +12,18 @@ export const metadata: Metadata = generateSeoMetadata(
 
 export default function TermsOfService() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[rgb(249,249,249)]">
       {/* Header */}
-      <header className="glass-strong sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <Cpu className="w-8 h-8 text-primary-400" />
+              <Cpu className="w-8 h-8 text-primary-600" />
               <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </Link>
             <Link
               href="/"
-              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
@@ -34,27 +34,27 @@ export default function TermsOfService() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="glass rounded-3xl p-8 md:p-12">
-          <h1 className="text-4xl font-bold text-white mb-2">Terms of Service</h1>
-          <p className="text-white/60 mb-8">Last updated: January 8, 2026</p>
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Terms of Service</h1>
+          <p className="text-gray-500 mb-8">Last updated: January 8, 2026</p>
 
-          <div className="prose prose-invert max-w-none space-y-8">
+          <div className="prose max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">1. Agreement to Terms</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Agreement to Terms</h2>
+              <p className="text-gray-600 leading-relaxed">
                 Welcome to Logithic Labs Inc. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website, products, and services (collectively, &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
               </p>
-              <p className="text-white/70 leading-relaxed mt-4">
+              <p className="text-gray-600 leading-relaxed mt-4">
                 If you are using our Services on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms, in which case &quot;you&quot; or &quot;your&quot; shall refer to such entity.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Services</h2>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Description of Services</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Logithic Labs Inc provides software development, staffing, and technology consulting services, including but not limited to:
               </p>
-              <ul className="list-disc list-inside text-white/70 space-y-2 ml-4">
+              <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
                 <li>Custom software development and engineering</li>
                 <li>Dedicated development teams</li>
                 <li>IT staffing and talent acquisition</li>
@@ -66,18 +66,18 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">3. Eligibility</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Eligibility</h2>
+              <p className="text-gray-600 leading-relaxed">
                 You must be at least 18 years of age and capable of forming a binding contract to use our Services. By using our Services, you represent and warrant that you meet these eligibility requirements.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">4. Account Registration</h2>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Account Registration</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Some of our Services may require you to create an account. When you create an account, you agree to:
               </p>
-              <ul className="list-disc list-inside text-white/70 space-y-2 ml-4">
+              <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
                 <li>Provide accurate, current, and complete information</li>
                 <li>Maintain and promptly update your account information</li>
                 <li>Keep your account credentials confidential</li>
@@ -87,39 +87,39 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">5. Service Agreements</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Service Agreements</h2>
+              <p className="text-gray-600 leading-relaxed">
                 Specific projects and engagements may be governed by separate Service Agreements, Statements of Work (SOW), or Master Service Agreements (MSA). In the event of any conflict between these Terms and a separate Service Agreement, the Service Agreement shall prevail for that specific engagement.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">6. Intellectual Property Rights</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Intellectual Property Rights</h2>
 
-              <h3 className="text-xl font-medium text-white/90 mb-3">6.1 Our Intellectual Property</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h3 className="text-xl font-medium text-gray-800 mb-3">6.1 Our Intellectual Property</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 The Services, including all content, features, and functionality, are owned by Logithic Labs Inc and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.
               </p>
 
-              <h3 className="text-xl font-medium text-white/90 mb-3">6.2 Client Work Product</h3>
-              <p className="text-white/70 leading-relaxed">
+              <h3 className="text-xl font-medium text-gray-800 mb-3">6.2 Client Work Product</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Unless otherwise specified in a Service Agreement, all custom work product developed specifically for you shall be owned by you upon full payment of all applicable fees. Pre-existing materials, tools, frameworks, and methodologies used in the development process remain our property.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">7. Confidentiality</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Confidentiality</h2>
+              <p className="text-gray-600 leading-relaxed">
                 Both parties agree to maintain the confidentiality of any proprietary or confidential information disclosed during the course of our engagement. This includes, but is not limited to, business strategies, technical specifications, customer data, and financial information. Confidentiality obligations shall survive the termination of these Terms.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">8. Payment Terms</h2>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Payment Terms</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Payment terms for specific services will be outlined in the applicable Service Agreement. General payment terms include:
               </p>
-              <ul className="list-disc list-inside text-white/70 space-y-2 ml-4">
+              <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
                 <li>All fees are quoted in USD unless otherwise specified</li>
                 <li>Invoices are due within 30 days of receipt unless otherwise agreed</li>
                 <li>Late payments may incur interest charges at 1.5% per month</li>
@@ -129,102 +129,102 @@ export default function TermsOfService() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">9. Warranties and Disclaimers</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Warranties and Disclaimers</h2>
 
-              <h3 className="text-xl font-medium text-white/90 mb-3">9.1 Service Warranty</h3>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h3 className="text-xl font-medium text-gray-800 mb-3">9.1 Service Warranty</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 We warrant that our Services will be performed in a professional and workmanlike manner consistent with industry standards. If Services do not conform to this warranty, we will re-perform the non-conforming Services at no additional cost.
               </p>
 
-              <h3 className="text-xl font-medium text-white/90 mb-3">9.2 Disclaimer</h3>
-              <p className="text-white/70 leading-relaxed">
+              <h3 className="text-xl font-medium text-gray-800 mb-3">9.2 Disclaimer</h3>
+              <p className="text-gray-600 leading-relaxed">
                 EXCEPT AS EXPRESSLY SET FORTH HEREIN, THE SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">10. Limitation of Liability</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Limitation of Liability</h2>
+              <p className="text-gray-600 leading-relaxed">
                 TO THE MAXIMUM EXTENT PERMITTED BY LAW, LOGITHIC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
               </p>
-              <p className="text-white/70 leading-relaxed mt-4">
+              <p className="text-gray-600 leading-relaxed mt-4">
                 OUR TOTAL LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS SHALL NOT EXCEED THE AMOUNTS PAID BY YOU TO LOGITHIC IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">11. Indemnification</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Indemnification</h2>
+              <p className="text-gray-600 leading-relaxed">
                 You agree to indemnify, defend, and hold harmless Logithic Labs Inc and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of the Services, violation of these Terms, or infringement of any third-party rights.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">12. Termination</h2>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Termination</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Either party may terminate these Terms or any Service Agreement:
               </p>
-              <ul className="list-disc list-inside text-white/70 space-y-2 ml-4">
+              <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
                 <li>For convenience with 30 days&apos; written notice</li>
                 <li>Immediately if the other party materially breaches these Terms</li>
                 <li>Immediately if the other party becomes insolvent or files for bankruptcy</li>
               </ul>
-              <p className="text-white/70 leading-relaxed mt-4">
+              <p className="text-gray-600 leading-relaxed mt-4">
                 Upon termination, you shall pay all amounts owed for Services rendered through the termination date.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">13. Non-Solicitation</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Non-Solicitation</h2>
+              <p className="text-gray-600 leading-relaxed">
                 During the term of engagement and for a period of twelve (12) months thereafter, neither party shall directly solicit for employment any employee of the other party who was involved in the provision or receipt of Services, without the prior written consent of the other party.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">14. Governing Law and Dispute Resolution</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">14. Governing Law and Dispute Resolution</h2>
+              <p className="text-gray-600 leading-relaxed">
                 These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law provisions. Any dispute arising out of or relating to these Terms shall be resolved through binding arbitration in Mississauga, Ontario, in accordance with the Arbitration Act, 1991 (Ontario).
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">15. Force Majeure</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">15. Force Majeure</h2>
+              <p className="text-gray-600 leading-relaxed">
                 Neither party shall be liable for any failure or delay in performance due to circumstances beyond its reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">16. Modifications to Terms</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">16. Modifications to Terms</h2>
+              <p className="text-gray-600 leading-relaxed">
                 We reserve the right to modify these Terms at any time. We will notify you of any material changes by posting the updated Terms on our website and updating the &quot;Last updated&quot; date. Your continued use of our Services after such changes constitutes your acceptance of the modified Terms.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">17. Severability</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">17. Severability</h2>
+              <p className="text-gray-600 leading-relaxed">
                 If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions of these Terms shall remain in full force and effect.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">18. Entire Agreement</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">18. Entire Agreement</h2>
+              <p className="text-gray-600 leading-relaxed">
                 These Terms, together with the Privacy Policy and any applicable Service Agreements, constitute the entire agreement between you and Logithic Labs Inc regarding the use of our Services and supersede all prior agreements and understandings.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">19. Contact Information</h2>
-              <p className="text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">19. Contact Information</h2>
+              <p className="text-gray-600 leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-white/5 rounded-xl">
-                <p className="text-white/90 font-medium">Logithic Labs Inc</p>
-                <p className="text-white/70">Email: legal@logithic.com</p>
-                <p className="text-white/70">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
+              <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                <p className="text-gray-900 font-medium">Logithic Labs Inc</p>
+                <p className="text-gray-600">Email: legal@logithic.com</p>
+                <p className="text-gray-600">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
             </section>
           </div>
@@ -232,8 +232,8 @@ export default function TermsOfService() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/40 text-sm">
+      <footer className="border-t border-gray-100 py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
         </div>
       </footer>

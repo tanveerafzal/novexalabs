@@ -85,18 +85,18 @@ const domains = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[rgb(249,249,249)]">
       {/* Header */}
-      <header className="glass-strong sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <Cpu className="w-8 h-8 text-primary-400" />
+              <Cpu className="w-8 h-8 text-primary-600" />
               <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </Link>
             <Link
               href="/"
-              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
@@ -107,11 +107,6 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -119,10 +114,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
               About Us
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               The DNA of <span className="text-gradient">Logithic Labs</span>
             </h1>
           </motion.div>
@@ -137,11 +132,11 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-3xl p-8 md:p-12"
+            className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100"
           >
-            <h2 className="text-3xl font-bold text-white mb-6">The Backstory</h2>
-            <p className="text-lg text-white/70 leading-relaxed">
-              Logithic Labs was founded on a simple premise: <span className="text-white font-semibold">Experience matters, but speed is currency.</span> Founded by two industry veterans with over 50 years of combined experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. We have navigated the complexities of multi-vendor landscapes and the rigors of government compliance and highly regulated industries. Now, we bring that enterprise-grade discipline to the agile digital world.
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Backstory</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Logithic Labs was founded on a simple premise: <span className="text-gray-900 font-semibold">Experience matters, but speed is currency.</span> Founded by two industry veterans with over 50 years of combined experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. We have navigated the complexities of multi-vendor landscapes and the rigors of government compliance and highly regulated industries. Now, we bring that enterprise-grade discipline to the agile digital world.
             </p>
           </motion.div>
         </div>
@@ -156,13 +151,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass rounded-3xl p-8 md:p-10"
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 p-3 mb-6">
                 <Zap className="w-full h-full text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
-              <p className="text-lg text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact logic that powers the future.
               </p>
             </motion.div>
@@ -172,13 +167,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass rounded-3xl p-8 md:p-10"
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-500 to-pink-500 p-3 mb-6">
                 <Eye className="w-full h-full text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
-              <p className="text-lg text-white/70 leading-relaxed">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Be the essential partner for organizations leading in the AI era — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
               </p>
             </motion.div>
@@ -187,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -196,10 +191,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Core <span className="text-gradient">Values</span>
             </h2>
-            <p className="text-xl text-white/60">The principles that drive everything we do.</p>
+            <p className="text-xl text-gray-500">The principles that drive everything we do.</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,12 +207,12 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="glass rounded-2xl p-6 h-full hover:bg-white/10 transition-all duration-500 group-hover:scale-105">
+                <div className="bg-white rounded-2xl p-6 h-full hover:shadow-lg transition-all duration-500 group-hover:scale-105 border border-gray-100">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${value.gradient} p-2.5 mb-4 group-hover:scale-110 transition-transform`}>
                     <value.icon className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
-                  <p className="text-white/60">{value.description}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
+                  <p className="text-gray-600">{value.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -227,10 +222,6 @@ export default function AboutPage() {
 
       {/* Domain Depth */}
       <section className="py-16 relative">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -239,10 +230,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Domain <span className="text-gradient">Depth</span>
             </h2>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
               We don&apos;t just know tech; we know your industry. Our founders have deep architectural and delivery experience in:
             </p>
           </motion.div>
@@ -257,14 +248,14 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="glass rounded-2xl p-6 h-full hover:bg-white/10 transition-all duration-500 group-hover:scale-105">
+                <div className="bg-white rounded-2xl p-6 h-full hover:shadow-lg transition-all duration-500 group-hover:scale-105 border border-gray-100">
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${domain.gradient} p-3 mb-5 group-hover:scale-110 transition-transform`}>
                     <domain.icon className="w-full h-full text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{domain.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{domain.title}</h3>
                   <ul className="space-y-2">
                     {domain.areas.map((area) => (
-                      <li key={area} className="flex items-center gap-2 text-white/60 text-sm">
+                      <li key={area} className="flex items-center gap-2 text-gray-600 text-sm">
                         <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${domain.gradient}`} />
                         {area}
                       </li>
@@ -278,7 +269,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -286,15 +277,15 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
               Ready to Build Something <span className="text-gradient">Extraordinary</span>?
             </h2>
-            <p className="text-xl text-white/60 mb-8">
+            <p className="text-xl text-gray-500 mb-8">
               Let&apos;s discuss how our experience can accelerate your next initiative.
             </p>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
             >
               Start the Conversation
             </Link>
@@ -303,8 +294,8 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/40 text-sm">
+      <footer className="border-t border-gray-100 py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
         </div>
       </footer>

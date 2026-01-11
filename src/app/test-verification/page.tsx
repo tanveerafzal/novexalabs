@@ -75,18 +75,18 @@ function CodeBlock({ code, language = 'javascript' }: { code: string; language?:
       <div className="absolute right-3 top-3 z-10">
         <button
           onClick={handleCopy}
-          className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+          className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors"
           title="Copy to clipboard"
         >
           {copied ? (
             <CheckCircle2 className="w-4 h-4 text-green-400" />
           ) : (
-            <Copy className="w-4 h-4 text-white/60" />
+            <Copy className="w-4 h-4 text-gray-300" />
           )}
         </button>
       </div>
-      <pre className="bg-gray-900/80 rounded-xl p-6 overflow-x-auto border border-white/10">
-        <code className={`language-${language} text-sm text-white/90 font-mono`}>
+      <pre className="bg-gray-900 rounded-xl p-6 overflow-x-auto border border-gray-800">
+        <code className={`language-${language} text-sm text-gray-100 font-mono`}>
           {code}
         </code>
       </pre>
@@ -166,7 +166,7 @@ export default function TestVerificationPage() {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[rgb(249,249,249)]">
       {/* Load TrustCredo SDK */}
       <Script
         src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"
@@ -176,16 +176,16 @@ export default function TestVerificationPage() {
       />
 
       {/* Header */}
-      <header className="glass-strong sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <Cpu className="w-8 h-8 text-primary-400" />
+              <Cpu className="w-8 h-8 text-primary-600" />
               <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
             </Link>
             <Link
               href="/"
-              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to Home
@@ -196,11 +196,6 @@ export default function TestVerificationPage() {
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl" />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -208,13 +203,13 @@ export default function TestVerificationPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
               SDK Integration
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               TrustCredo <span className="text-gradient">Verification SDK</span>
             </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
               Integrate identity verification into your application with just a few lines of code.
             </p>
           </motion.div>
@@ -237,8 +232,8 @@ export default function TestVerificationPage() {
                 1
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-white">Include the SDK</h2>
-                <p className="text-white/60">Add the TrustCredo SDK script to your HTML</p>
+                <h2 className="text-2xl font-bold text-gray-900">Include the SDK</h2>
+                <p className="text-gray-500">Add the TrustCredo SDK script to your HTML</p>
               </div>
             </div>
             <CodeBlock code={codeSnippets.step1} language="html" />
@@ -257,25 +252,25 @@ export default function TestVerificationPage() {
                 2
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-white">Initialize with API Key</h2>
-                <p className="text-white/60">Configure TrustCredo with your partner API key and callbacks</p>
+                <h2 className="text-2xl font-bold text-gray-900">Initialize with API Key</h2>
+                <p className="text-gray-500">Configure TrustCredo with your partner API key and callbacks</p>
               </div>
             </div>
             <CodeBlock code={codeSnippets.step2} language="javascript" />
-            <div className="mt-4 glass rounded-xl p-4">
-              <h4 className="text-white font-semibold mb-2">Callback Functions:</h4>
-              <ul className="space-y-2 text-white/70 text-sm">
+            <div className="mt-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+              <h4 className="text-gray-900 font-semibold mb-2">Callback Functions:</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">onSuccess</code> — Called when verification is successful. Contains extracted user data.</span>
+                  <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">onSuccess</code> — Called when verification is successful. Contains extracted user data.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">onFailure</code> — Called when verification fails. Contains error details.</span>
+                  <CheckCircle2 className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">onFailure</code> — Called when verification fails. Contains error details.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">onClose</code> — Called when user closes the verification modal.</span>
+                  <CheckCircle2 className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">onClose</code> — Called when user closes the verification modal.</span>
                 </li>
               </ul>
             </div>
@@ -294,25 +289,25 @@ export default function TestVerificationPage() {
                 3
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-white">Start Verification</h2>
-                <p className="text-white/60">Trigger the verification flow when user clicks a button</p>
+                <h2 className="text-2xl font-bold text-gray-900">Start Verification</h2>
+                <p className="text-gray-500">Trigger the verification flow when user clicks a button</p>
               </div>
             </div>
             <CodeBlock code={codeSnippets.step3} language="javascript" />
-            <div className="mt-4 glass rounded-xl p-4">
-              <h4 className="text-white font-semibold mb-2">Parameters:</h4>
-              <ul className="space-y-2 text-white/70 text-sm">
+            <div className="mt-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+              <h4 className="text-gray-900 font-semibold mb-2">Parameters:</h4>
+              <ul className="space-y-2 text-gray-600 text-sm">
                 <li className="flex items-start gap-2">
-                  <Code2 className="w-4 h-4 text-primary-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">userId</code> — Your unique identifier for the user</span>
+                  <Code2 className="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">userId</code> — Your unique identifier for the user</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Code2 className="w-4 h-4 text-primary-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">userEmail</code> — User&apos;s email address</span>
+                  <Code2 className="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">userEmail</code> — User&apos;s email address</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Code2 className="w-4 h-4 text-primary-400 mt-0.5 flex-shrink-0" />
-                  <span><code className="text-primary-400">userName</code> — User&apos;s display name</span>
+                  <Code2 className="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <span><code className="text-primary-600">userName</code> — User&apos;s display name</span>
                 </li>
               </ul>
             </div>
@@ -326,15 +321,15 @@ export default function TestVerificationPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-center"
           >
-            <div className="glass rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-white mb-4">Try It Out</h3>
-              <p className="text-white/60 mb-6">
-                Click the button below to see the verification flow in action. 
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Try It Out</h3>
+              <p className="text-gray-500 mb-6">
+                Click the button below to see the verification flow in action.
               </p>
               <button
                 onClick={handleStartVerification}
                 disabled={!sdkReady || verificationStatus === 'loading'}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 {verificationStatus === 'loading' ? (
                   <>
@@ -353,16 +348,16 @@ export default function TestVerificationPage() {
               {statusMessage && (
                 <div className={`mt-4 p-4 rounded-xl ${
                   verificationStatus === 'success'
-                    ? 'bg-green-500/20 border border-green-500/30'
-                    : 'bg-red-500/20 border border-red-500/30'
+                    ? 'bg-green-50 border border-green-200'
+                    : 'bg-red-50 border border-red-200'
                 }`}>
-                  <p className={verificationStatus === 'success' ? 'text-green-400' : 'text-red-400'}>
+                  <p className={verificationStatus === 'success' ? 'text-green-600' : 'text-red-600'}>
                     {statusMessage}
                   </p>
                 </div>
               )}
 
-              <p className={`text-sm mt-4 ${sdkError ? 'text-red-400' : 'text-white/40'}`}>
+              <p className={`text-sm mt-4 ${sdkError ? 'text-red-500' : 'text-gray-400'}`}>
                 {sdkError ? sdkError : sdkReady ? 'SDK loaded and ready.' : 'Loading SDK...'}
               </p>
             </div>
@@ -371,7 +366,7 @@ export default function TestVerificationPage() {
       </section>
 
       {/* Full Example */}
-      <section className="py-16 relative">
+      <section className="py-16 relative bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -379,7 +374,7 @@ export default function TestVerificationPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Complete <span className="text-gradient">Example</span>
             </h2>
             <CodeBlock
@@ -435,15 +430,15 @@ export default function TestVerificationPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
               Ready to <span className="text-gradient">Get Started</span>?
             </h2>
-            <p className="text-xl text-white/60 mb-8">
+            <p className="text-xl text-gray-500 mb-8">
               Contact us to get your partner API key and start integrating.
             </p>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
             >
               Request API Key
             </Link>
@@ -452,8 +447,8 @@ export default function TestVerificationPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white/40 text-sm">
+      <footer className="border-t border-gray-100 py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
         </div>
       </footer>
