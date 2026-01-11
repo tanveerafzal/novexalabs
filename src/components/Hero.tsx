@@ -73,26 +73,25 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
-        >
-          <Sparkles className="w-4 h-4 text-accent-400" />
-          <span className="text-sm text-white/80">Intelligence Engineered. Delivered Now.</span>
-        </motion.div>
-
         {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8"
+          transition={{ duration: 0.6 }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
         >
           <span className="text-gradient">Logithic Labs</span>
         </motion.h1>
+
+        {/* Tagline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-8"
+        >
+          Intelligence Engineered. Delivered Now.
+        </motion.h2>
 
         {/* Description */}
         <motion.p
