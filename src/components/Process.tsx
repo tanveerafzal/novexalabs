@@ -43,12 +43,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 relative">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl" />
-      </div>
-
+    <section id="process" className="py-32 relative bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -58,10 +53,10 @@ export default function Process() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
             The Process
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             The Logithic Loop: <span className="text-gradient">Engineered for Speed, Agility & Real-World Results</span>
           </h2>
         </motion.div>
@@ -74,60 +69,42 @@ export default function Process() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="glass rounded-2xl p-8 text-center">
-            <p className="text-lg text-white/70 leading-relaxed">
-              We don&apos;t believe in <span className="text-white font-semibold">&quot;Analysis Paralysis.&quot;</span> Our process is designed to get code into production without bypassing security or governance. We focus on IT delivery that prioritizes <span className="text-gradient font-semibold">speed, agility, and flexibility</span>.
+          <div className="bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100">
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We don&apos;t believe in <span className="text-gray-900 font-semibold">&quot;Analysis Paralysis.&quot;</span> Our process is designed to get code into production without bypassing security or governance. We focus on IT delivery that prioritizes <span className="text-gradient font-semibold">speed, agility, and flexibility</span>.
             </p>
           </div>
         </motion.div>
 
-        {/* Process Steps - Timeline Layout */}
-        <div className="relative">
-          {/* Central Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/50 via-accent-500/50 to-primary-500/50 hidden lg:block" />
-
-          <div className="space-y-12 lg:space-y-0">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center ${
-                  index % 2 === 0 ? '' : 'lg:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline Node */}
-                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 z-10">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 animate-ping opacity-30" />
-                </div>
-
-                {/* Content Card */}
-                <div className={`${index % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:col-start-2 lg:pl-12'}`}>
-                  <div className="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 group hover:scale-105">
-                    <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.gradient} p-3 group-hover:scale-110 transition-transform`}>
-                        <step.icon className="w-full h-full text-white" />
-                      </div>
-                      <span className="text-5xl font-bold text-white/10 group-hover:text-white/20 transition-colors">
-                        {step.number}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-white/60 leading-relaxed">
-                      {step.description}
-                    </p>
+        {/* Process Steps */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="bg-white rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 group-hover:scale-105 border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.gradient} p-2.5 group-hover:scale-110 transition-transform`}>
+                    <step.icon className="w-full h-full text-white" />
                   </div>
+                  <span className="text-4xl font-bold text-gray-200 group-hover:text-gray-300 transition-colors">
+                    {step.number}
+                  </span>
                 </div>
-
-                {/* Spacer for opposite side */}
-                <div className={`hidden lg:block ${index % 2 === 0 ? 'lg:col-start-2' : ''}`} />
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* CTA */}
@@ -140,7 +117,7 @@ export default function Process() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
           >
             Start Your Journey
           </a>

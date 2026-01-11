@@ -38,12 +38,6 @@ const valueProps = [
 export default function WhyUs() {
   return (
     <section id="why-us" className="py-32 relative">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl" />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -53,10 +47,10 @@ export default function WhyUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
             Value Proposition
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Why <span className="text-gradient">Logithic</span>?
           </h2>
         </motion.div>
@@ -72,24 +66,19 @@ export default function WhyUs() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass rounded-3xl p-8 h-full hover:bg-white/10 transition-all duration-500 group-hover:scale-[1.02] relative overflow-hidden">
-                {/* Glow Effect */}
-                <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${prop.gradient} opacity-0 group-hover:opacity-20 rounded-full blur-3xl transition-opacity duration-500`} />
-
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${prop.gradient} p-4 mb-6 group-hover:scale-110 transition-transform`}>
-                    <prop.icon className="w-full h-full text-white" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    {prop.title}
-                  </h3>
-                  <p className="text-white/60 leading-relaxed text-lg">
-                    {prop.description}
-                  </p>
+              <div className="bg-white rounded-3xl p-8 h-full hover:shadow-xl transition-all duration-500 group-hover:scale-[1.02] border border-gray-100">
+                {/* Icon */}
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${prop.gradient} p-4 mb-6 group-hover:scale-110 transition-transform`}>
+                  <prop.icon className="w-full h-full text-white" />
                 </div>
+
+                {/* Content */}
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {prop.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-lg">
+                  {prop.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -103,12 +92,12 @@ export default function WhyUs() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-white/60 mb-6 text-lg">
+          <p className="text-gray-600 mb-6 text-lg">
             Ready to experience the Logithic difference?
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
           >
             Let&apos;s Talk
           </a>

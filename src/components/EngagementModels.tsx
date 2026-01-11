@@ -51,12 +51,7 @@ const models = [
 
 export default function EngagementModels() {
   return (
-    <section id="engagement" className="py-32 relative">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl" />
-      </div>
-
+    <section id="engagement" className="py-32 relative bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -66,13 +61,13 @@ export default function EngagementModels() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
             Engagement Models
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Flexible Frameworks <span className="text-gradient">Designed for Your Reality</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Choose the partnership model that fits your business needs, budget, and timeline.
           </p>
         </motion.div>
@@ -88,22 +83,19 @@ export default function EngagementModels() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="glass rounded-2xl p-8 h-full hover:bg-white/10 transition-all duration-500 group-hover:scale-105">
+              <div className="bg-white rounded-2xl p-8 h-full hover:shadow-xl transition-all duration-500 group-hover:scale-105 border border-gray-100">
                 {/* Icon */}
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${model.gradient} p-3 mb-6 group-hover:scale-110 transition-transform`}>
                   <model.icon className="w-full h-full text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {model.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {model.description}
                 </p>
-
-                {/* Hover Glow Effect */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${model.gradient} opacity-0 group-hover:opacity-10 transition-opacity blur-xl`} />
               </div>
             </motion.div>
           ))}
@@ -117,12 +109,12 @@ export default function EngagementModels() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <p className="text-white/60 mb-6 text-lg">
+          <p className="text-gray-600 mb-6 text-lg">
             Not sure which model fits? Let&apos;s find the right framework together.
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
           >
             Schedule a Consultation
           </a>

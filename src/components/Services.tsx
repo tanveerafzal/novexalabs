@@ -107,13 +107,13 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass text-primary-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
             Our Services
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Solutions That <span className="text-gradient">Drive Growth</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             End-to-end technology services engineered to transform complexity into competitive advantage.
           </p>
         </motion.div>
@@ -129,25 +129,22 @@ export default function Services() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group relative"
             >
-              <div className="glass rounded-2xl p-6 h-full hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl flex flex-col">
+              <div className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col">
                 {/* Icon */}
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} p-2.5 mb-5 group-hover:scale-110 transition-transform`}>
                   <service.icon className="w-full h-full text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold text-white mb-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   {service.title}
                 </h3>
                 <p className={`text-sm font-medium bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-3`}>
                   {service.subtitle}
                 </p>
-                <p className="text-white/60 text-sm leading-relaxed flex-grow">
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
-
-                {/* Hover Glow Effect */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity blur-xl`} />
               </div>
             </motion.div>
           ))}
@@ -163,7 +160,7 @@ export default function Services() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
           >
             Ignite Your Next Leap
           </a>
