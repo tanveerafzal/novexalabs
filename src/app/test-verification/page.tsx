@@ -96,47 +96,72 @@ function CodeBlock({ code, language = 'javascript' }: { code: string; language?:
 
 export default function TestVerificationPage() {
   const [sdkReady, setSdkReady] = useState(false)
+  const [sdkError, setSdkError] = useState<string | null>(null)
   const [verificationStatus, setVerificationStatus] = useState<'idle' | 'loading' | 'success' | 'failed'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
 
   const handleScriptLoad = useCallback(() => {
+    console.log('TrustCredo SDK script loaded')
     if (window.TrustCredo) {
-      window.TrustCredo.init({
-        apiKey: PARTNER_API_KEY,
+      console.log('TrustCredo object found, initializing...')
+      try {
+        window.TrustCredo.init({
+          apiKey: PARTNER_API_KEY,
 
-        onSuccess: (result) => {
-          console.log('Verified!', result.extractedData.fullName)
-          setVerificationStatus('success')
-          setStatusMessage(`Verification successful! Welcome, ${result.extractedData.fullName}`)
-        },
+          onSuccess: (result) => {
+            console.log('Verified!', result.extractedData.fullName)
+            setVerificationStatus('success')
+            setStatusMessage(`Verification successful! Welcome, ${result.extractedData.fullName}`)
+          },
 
-        onFailure: (result) => {
-          console.log('Failed', result)
-          setVerificationStatus('failed')
-          setStatusMessage('Verification failed. Please try again.')
-        },
+          onFailure: (result) => {
+            console.log('Failed', result)
+            setVerificationStatus('failed')
+            setStatusMessage('Verification failed. Please try again.')
+          },
 
-        onClose: () => {
-          console.log('User closed modal')
-          if (verificationStatus === 'loading') {
+          onClose: () => {
+            console.log('User closed modal')
             setVerificationStatus('idle')
             setStatusMessage('')
-          }
-        },
-      })
-      setSdkReady(true)
+          },
+        })
+        setSdkReady(true)
+        console.log('TrustCredo SDK initialized successfully')
+      } catch (error) {
+        console.error('Error initializing TrustCredo:', error)
+        setSdkError('Failed to initialize SDK')
+      }
+    } else {
+      console.error('TrustCredo object not found on window')
+      setSdkError('SDK loaded but TrustCredo not available')
     }
-  }, [verificationStatus])
+  }, [])
+
+  const handleScriptError = () => {
+    console.error('Failed to load TrustCredo SDK script')
+    setSdkError('Failed to load SDK script. Please check the URL.')
+  }
 
   const handleStartVerification = () => {
     if (window.TrustCredo) {
+      console.log('Starting verification...')
       setVerificationStatus('loading')
       setStatusMessage('')
-      window.TrustCredo.startVerification({
-        userId: 'demo_user_' + Date.now(),
-        userEmail: 'demo@example.com',
-        userName: 'Demo User',
-      })
+      try {
+        window.TrustCredo.startVerification({
+          userId: 'demo_user_' + Date.now(),
+          userEmail: 'demo@example.com',
+          userName: 'Demo User',
+        })
+      } catch (error) {
+        console.error('Error starting verification:', error)
+        setVerificationStatus('failed')
+        setStatusMessage('Error starting verification')
+      }
+    } else {
+      console.error('TrustCredo not available')
+      setSdkError('TrustCredo SDK not available')
     }
   }
 
@@ -146,6 +171,7 @@ export default function TestVerificationPage() {
       <Script
         src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"
         onLoad={handleScriptLoad}
+        onError={handleScriptError}
         strategy="afterInteractive"
       />
 
@@ -336,8 +362,8 @@ export default function TestVerificationPage() {
                 </div>
               )}
 
-              <p className="text-white/40 text-sm mt-4">
-                {sdkReady ? 'SDK loaded and ready.' : 'Loading SDK...'}
+              <p className={`text-sm mt-4 ${sdkError ? 'text-red-400' : 'text-white/40'}`}>
+                {sdkError ? sdkError : sdkReady ? 'SDK loaded and ready.' : 'Loading SDK...'}
               </p>
             </div>
           </motion.div>
