@@ -165,7 +165,7 @@ export default function Services() {
             href="#contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
           >
-            Discuss Your Project
+            Ignite Your Next Leap
           </a>
         </motion.div>
       </div>
