@@ -9,65 +9,89 @@ import {
   Smartphone,
   Database,
   Brain,
-  Rocket
+  Rocket,
+  Blocks,
+  Settings,
+  UserCheck,
 } from 'lucide-react'
 
 const services = [
   {
     icon: Code2,
-    title: 'Custom Software Development',
-    description: 'Tailored software solutions designed to solve your unique business challenges with cutting-edge technology.',
-    features: ['Web Applications', 'Enterprise Systems', 'API Development'],
+    title: 'Bespoke Digital Engineering',
+    subtitle: 'Custom Software Development',
+    description: 'Full-stack magic — frontend to backend, APIs, D365/Salesforce extensions, React/Flutter cross-platform apps, mobile apps. From concept to production-grade in record time.',
     gradient: 'from-blue-500 to-cyan-500',
   },
   {
-    icon: Users,
-    title: 'Dedicated Teams',
-    description: 'Scale your development capacity with fully managed, dedicated teams that integrate seamlessly with your workflow.',
-    features: ['Full-Stack Teams', 'Agile Methodology', 'Transparent Communication'],
+    icon: Blocks,
+    title: 'Enterprise Blueprinting',
+    subtitle: 'Architecture & Design Consulting',
+    description: 'Future-proof blueprints — functional/technical architecture, platform strategy, UI/UX mastery, requirements-to-gating, independent reviews, platform strategies.',
     gradient: 'from-purple-500 to-pink-500',
   },
   {
-    icon: Cpu,
-    title: 'AI/ML Solutions',
-    description: 'Harness the power of artificial intelligence to automate processes and unlock insights from your data.',
-    features: ['Machine Learning', 'Natural Language Processing', 'Predictive Analytics'],
-    gradient: 'from-green-500 to-emerald-500',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud Services',
-    description: 'Modernize your infrastructure with scalable, secure cloud solutions on AWS, Azure, or Google Cloud.',
-    features: ['Cloud Migration', 'DevOps', 'Serverless Architecture'],
+    icon: Settings,
+    title: 'Transformation Engine',
+    subtitle: 'Strategic IT Modernization',
+    description: 'Full-throttle modernization programs — multi-year roadmaps, stakeholder orchestration, RFP/RFB/RFQ mastery, vendor selection, zero-disruption execution.',
     gradient: 'from-orange-500 to-red-500',
   },
   {
     icon: Smartphone,
-    title: 'Mobile Development',
-    description: 'Create stunning mobile experiences with native and cross-platform applications for iOS and Android.',
-    features: ['React Native', 'Flutter', 'Native iOS/Android'],
-    gradient: 'from-indigo-500 to-purple-500',
+    title: 'Mobile Ecosystems',
+    subtitle: 'Dedicated Mobile Development',
+    description: 'Native & cross-platform apps that feel premium and perform at scale — Flutter, React Native, iOS/Android mastery. Launch-ready, fast.',
+    gradient: 'from-green-500 to-emerald-500',
+  },
+  {
+    icon: Brain,
+    title: 'Cognitive Intelligence',
+    subtitle: 'AI/ML Solutions',
+    description: 'Embed agentic AI, generative tools, NLP, chatbots, predictive models — with ethical governance and MLOps from day one that actually drive ROI.',
+    gradient: 'from-violet-500 to-purple-500',
   },
   {
     icon: Database,
     title: 'Data Engineering',
-    description: 'Build robust data pipelines and infrastructure to power your analytics and decision-making.',
-    features: ['ETL Pipelines', 'Data Warehousing', 'Real-time Processing'],
+    subtitle: 'Analytics & Business Intelligence',
+    description: 'Modern pipelines & infrastructure — Snowflake, Azure Data Lake, real-time ingestion, BI-ready lakes for analytics & AI fuel.',
     gradient: 'from-teal-500 to-cyan-500',
   },
   {
-    icon: Brain,
-    title: 'IT Staffing',
-    description: 'Access top-tier tech talent for permanent, contract, or project-based roles across all skill levels.',
-    features: ['Technical Recruiting', 'Skill Assessment', 'Quick Deployment'],
-    gradient: 'from-rose-500 to-pink-500',
+    icon: Cloud,
+    title: 'Cloud Velocity',
+    subtitle: 'Cloud Migration',
+    description: 'Secure and cost effective lifts to AWS/Azure/Google — refactor, DevOps pipelines, cloud-native optimization.',
+    gradient: 'from-sky-500 to-blue-500',
   },
   {
     icon: Rocket,
-    title: 'Product Development',
-    description: 'From concept to launch, we help startups and enterprises build products that users love.',
-    features: ['MVP Development', 'Product Strategy', 'UI/UX Design'],
+    title: 'Product Ignition',
+    subtitle: 'MVP & Startup Partnership',
+    description: 'Idea → MVP → scale. Strategy, rapid prototyping, launch — with equity-sharing for aligned upside. Equity based models available for startups.',
     gradient: 'from-amber-500 to-orange-500',
+  },
+  {
+    icon: Cpu,
+    title: 'Ops Command',
+    subtitle: 'Managed Services',
+    description: 'Proactive 24/7 care for single apps to full estates — monitoring, updates, performance, security — hands-off peace.',
+    gradient: 'from-rose-500 to-pink-500',
+  },
+  {
+    icon: Users,
+    title: 'Fusion Teams',
+    subtitle: 'Dedicated Teams',
+    description: 'Plug-and-play Agile teams that function as a seamless extension of your workforce.',
+    gradient: 'from-indigo-500 to-violet-500',
+  },
+  {
+    icon: UserCheck,
+    title: 'Talent Calibration',
+    subtitle: 'IT Staffing',
+    description: 'Access the top 1% of tech talent. Onshore, Nearshore, or Offshore. Cost-effective scale with full transparency.',
+    gradient: 'from-fuchsia-500 to-pink-500',
   },
 ]
 
@@ -89,46 +113,38 @@ export default function Services() {
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             Solutions That <span className="text-gradient">Drive Growth</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
-            Comprehensive technology services designed to transform your ideas into
-            powerful digital solutions.
+          <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            End-to-end technology services engineered to transform complexity into competitive advantage.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
               className="group relative"
             >
-              <div className="glass rounded-2xl p-6 h-full hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+              <div className="glass rounded-2xl p-6 h-full hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl flex flex-col">
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} p-3 mb-6 group-hover:scale-110 transition-transform`}>
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} p-2.5 mb-5 group-hover:scale-110 transition-transform`}>
                   <service.icon className="w-full h-full text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-1">
                   {service.title}
                 </h3>
-                <p className="text-white/60 mb-4 text-sm leading-relaxed">
+                <p className={`text-sm font-medium bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent mb-3`}>
+                  {service.subtitle}
+                </p>
+                <p className="text-white/60 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
-
-                {/* Features */}
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-white/50">
-                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient}`} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
 
                 {/* Hover Glow Effect */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity blur-xl`} />
@@ -136,6 +152,22 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-16"
+        >
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all hover:scale-105"
+          >
+            Discuss Your Project
+          </a>
+        </motion.div>
       </div>
     </section>
   )
