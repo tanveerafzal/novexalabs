@@ -73,7 +73,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
+        {/* Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <Sparkles className="w-4 h-4 text-accent-400" />
-          <span className="text-sm text-white/80">AI-Powered Development Solutions</span>
+          <span className="text-sm text-white/80">Intelligence Engineered. Delivered Now.</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -89,22 +89,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8"
         >
-          <span className="text-white">Build the Future with</span>
-          <br />
-          <span className="text-gradient">Intelligent Software</span>
+          <span className="text-gradient">Logithic Labs</span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl text-white/70 max-w-3xl mx-auto mb-12"
+          className="text-lg sm:text-xl text-white/70 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
-          We deliver cutting-edge software development, dedicated teams, and elite
-          staffing solutions powered by AI to accelerate your digital transformation.
+          We build intelligent, scalable software and assemble elite teams that accelerate your edge in an AI-powered world. 50+ years combined architecting mission-critical systems across every major sector — from telecom and finance to public sector, healthcare, and logistics. We turn complexity into velocity: custom code, AI layers, cloud-native foundations — zero legacy drag, full future-proof portability.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -118,7 +115,7 @@ export default function Hero() {
             href="#contact"
             className="group px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-primary-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
           >
-            Start Your Project
+            Ignite Your Next Leap
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
@@ -137,8 +134,8 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { value: '150+', label: 'Projects Delivered', icon: Zap },
-            { value: '50+', label: 'Expert Engineers', icon: Shield },
+            { value: '50+', label: 'Years Combined Experience', icon: Zap },
+            { value: '100+', label: 'Projects Delivered', icon: Shield },
             { value: '98%', label: 'Client Satisfaction', icon: Sparkles },
             { value: '24/7', label: 'Support Available', icon: Shield },
           ].map((stat, index) => (
