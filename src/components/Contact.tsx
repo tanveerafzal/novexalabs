@@ -187,7 +187,7 @@ export default function Contact() {
                     >
                       <option value="">Select a service</option>
                       <option value="custom-development">Custom Development</option>
-                      <option value="dedicated-teams">Dedicated Teams</option>
+                      <option value="fusion-teams">Fusion Teams</option>
                       <option value="ai-solutions">AI/ML Solutions</option>
                       <option value="cloud-services">Cloud Services</option>
                       <option value="mobile-development">Mobile Development</option>

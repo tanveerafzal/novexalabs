@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   Code2,
   Users,
@@ -82,9 +83,10 @@ const services = [
   {
     icon: Users,
     title: 'Fusion Teams',
-    subtitle: 'Dedicated Teams',
+    subtitle: 'Fusion Teams',
     description: 'Plug-and-play Agile teams that function as a seamless extension of your workforce.',
     gradient: 'from-indigo-500 to-violet-500',
+    href: '/fusion-teams',
   },
   {
     icon: UserCheck,
@@ -120,16 +122,9 @@ export default function Services() {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="group relative"
-            >
-              <div className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col">
+          {services.map((service, index) => {
+            const CardContent = (
+              <>
                 {/* Icon */}
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} p-2.5 mb-5 group-hover:scale-110 transition-transform`}>
                   <service.icon className="w-full h-full text-white" />
@@ -145,9 +140,35 @@ export default function Services() {
                 <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
-              </div>
-            </motion.div>
-          ))}
+                {service.href && (
+                  <p className={`text-sm font-medium mt-3 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                    Learn more →
+                  </p>
+                )}
+              </>
+            )
+
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="group relative"
+              >
+                {service.href ? (
+                  <Link href={service.href} className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col block">
+                    {CardContent}
+                  </Link>
+                ) : (
+                  <div className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col">
+                    {CardContent}
+                  </div>
+                )}
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* CTA */}

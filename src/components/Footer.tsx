@@ -6,7 +6,7 @@ import { Cpu, Github, Linkedin, Twitter } from 'lucide-react'
 const footerLinks = {
   services: [
     { name: 'Custom Development', href: '#services' },
-    { name: 'Dedicated Teams', href: '#services' },
+    { name: 'Fusion Teams', href: '/fusion-teams' },
     { name: 'AI/ML Solutions', href: '#services' },
     { name: 'Cloud Services', href: '#services' },
     { name: 'IT Staffing', href: '#services' },

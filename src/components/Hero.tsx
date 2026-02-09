@@ -5,7 +5,7 @@ import { ArrowRight, Zap, Shield, Sparkles } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
