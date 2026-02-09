@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, Cpu, Zap, Activity, TrendingUp, Code, TestTube, Compass, ClipboardList, Check } from 'lucide-react'
+import { ArrowLeft, Cpu, Zap, Activity, TrendingUp, Code, TestTube, Compass, ClipboardList, Check, Building2 } from 'lucide-react'
 
 const teams = [
   {
@@ -27,7 +27,9 @@ const teams = [
     gradient: 'from-primary-500 to-cyan-500',
     icon: Activity,
     popular: true,
-    price: 27500,
+    originalPrice: 27500,
+    price: 24750,
+    discount: 10,
     composition: [
       { role: 'Full Stack Developers', allocation: '100%', count: 2, icon: Code },
       { role: 'QA Engineer', allocation: '100%', count: 1, icon: TestTube },
@@ -50,6 +52,22 @@ const teams = [
       { role: 'Project Management', allocation: '75%', count: 0.75, icon: ClipboardList },
     ],
     ideal: ['Enterprise Transformations', 'Multi-Module Systems', 'Aggressive Timelines'],
+  },
+  {
+    name: 'Fusion Corporate',
+    tagline: 'Tailored for Scale',
+    description: 'Custom-configured teams for large-scale corporate initiatives. Flexible composition, dedicated leadership, and enterprise SLAs.',
+    gradient: 'from-slate-600 to-slate-800',
+    icon: Building2,
+    corporate: true,
+    features: [
+      'Custom team size and composition',
+      'Dedicated account management',
+      'Enterprise SLAs and compliance',
+      'Volume-based pricing',
+      'Multi-project support',
+      'On-site options available',
+    ],
   },
 ]
 
@@ -113,8 +131,9 @@ export default function FusionTeamsPage() {
       {/* Teams Section */}
       <section className="py-8 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Standard Teams - 3 columns */}
           <div className="grid lg:grid-cols-3 gap-8">
-            {teams.map((team, index) => (
+            {teams.filter(t => !t.corporate).map((team, index) => (
               <motion.div
                 key={team.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -146,49 +165,86 @@ export default function FusionTeamsPage() {
 
                   <p className="text-gray-600 mb-4">{team.description}</p>
 
-                  {/* Price */}
-                  <div className="mb-6">
-                    <span className={`text-3xl font-bold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
-                      ${team.price.toLocaleString()}
-                    </span>
-                    <span className="text-gray-500 text-sm ml-1">USD/month</span>
-                  </div>
+                  {team.corporate ? (
+                    <>
+                      {/* Custom Pricing */}
+                      <div className="mb-6">
+                        <span className={`text-3xl font-bold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
+                          Custom
+                        </span>
+                        <span className="text-gray-500 text-sm ml-1">pricing</span>
+                      </div>
 
-                  {/* Team Composition */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Team Composition</h4>
-                    <div className="space-y-3">
-                      {team.composition.map((member) => (
-                        <div key={member.role} className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <member.icon className="w-4 h-4 text-gray-400" />
-                            <span className="text-gray-700">
-                              <span className={`font-semibold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
-                                {member.count >= 1 ? `${member.count} × ` : ''}
-                              </span>
-                              {member.role}
+                      {/* Features */}
+                      <div className="pt-6 border-t border-gray-100">
+                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Includes</h4>
+                        <ul className="space-y-2">
+                          {team.features.map((feature) => (
+                            <li key={feature} className="flex items-center gap-2 text-gray-600 text-sm">
+                              <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Price */}
+                      <div className="mb-6">
+                        {team.discount && (
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-gray-400 line-through text-lg">
+                              ${team.originalPrice.toLocaleString()}
+                            </span>
+                            <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-semibold">
+                              {team.discount}% OFF
                             </span>
                           </div>
-                          <span className={`text-sm font-semibold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
-                            {member.allocation}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                        )}
+                        <span className={`text-3xl font-bold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
+                          ${team.price.toLocaleString()}
+                        </span>
+                        <span className="text-gray-500 text-sm ml-1">USD/month</span>
+                      </div>
 
-                  {/* Ideal For */}
-                  <div className="pt-6 border-t border-gray-100">
-                    <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Ideal For</h4>
-                    <ul className="space-y-2">
-                      {team.ideal.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-gray-600 text-sm">
-                          <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${team.gradient}`} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      {/* Team Composition */}
+                      <div className="mb-6">
+                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Team Composition</h4>
+                        <div className="space-y-3">
+                          {team.composition.map((member) => (
+                            <div key={member.role} className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <member.icon className="w-4 h-4 text-gray-400" />
+                                <span className="text-gray-700">
+                                  <span className={`font-semibold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
+                                    {member.count >= 1 ? `${member.count} × ` : ''}
+                                  </span>
+                                  {member.role}
+                                </span>
+                              </div>
+                              <span className={`text-sm font-semibold bg-gradient-to-r ${team.gradient} bg-clip-text text-transparent`}>
+                                {member.allocation}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Ideal For */}
+                      <div className="pt-6 border-t border-gray-100">
+                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Ideal For</h4>
+                        <ul className="space-y-2">
+                          {team.ideal.map((item) => (
+                            <li key={item} className="flex items-center gap-2 text-gray-600 text-sm">
+                              <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${team.gradient}`} />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  )}
 
                   {/* CTA Button */}
                   <a
@@ -196,17 +252,74 @@ export default function FusionTeamsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`mt-8 block w-full py-3 rounded-full text-center font-semibold transition-all hover:scale-105 ${
-                      team.popular
+                      team.corporate
+                        ? 'bg-gradient-to-r from-slate-700 to-slate-900 text-white'
+                        : team.popular
                         ? 'bg-gradient-to-r from-primary-500 to-cyan-500 text-white'
                         : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                     }`}
                   >
-                    Book a Call
+                    {'Book a Call'}
                   </a>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Corporate Team - Full Width */}
+          {teams.filter(t => t.corporate).map((team) => (
+            <motion.div
+              key={team.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8"
+            >
+              <div className="bg-white rounded-3xl p-8 md:p-10 border-2 border-primary-200 shadow-lg">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left side - Info */}
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 p-3">
+                        <team.icon className="w-full h-full text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">{team.name}</h3>
+                        <p className="text-primary-600 text-sm font-medium">{team.tagline}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 mb-6">{team.description}</p>
+                    <div className="mb-6">
+                      <span className="text-3xl font-bold text-gradient">Custom</span>
+                      <span className="text-gray-500 text-sm ml-1">pricing</span>
+                    </div>
+                    <a
+                      href="https://cal.com/logithiclabs/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold transition-all hover:scale-105"
+                    >
+                      Let&apos;s Talk
+                    </a>
+                  </div>
+
+                  {/* Right side - Features */}
+                  <div className="bg-gray-50 rounded-2xl p-6">
+                    <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Includes</h4>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {team.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2 text-gray-600 text-sm">
+                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
