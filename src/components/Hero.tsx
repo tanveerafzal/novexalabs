@@ -73,8 +73,7 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { value: '50+', label: 'Years Combined Experience', icon: Zap },
-            { value: '100+', label: 'Projects Delivered', icon: Shield },
+            { value: '20+', label: 'Years Experience', icon: Zap },
             { value: '98%', label: 'Client Satisfaction', icon: Sparkles },
             { value: '24/7', label: 'Support Available', icon: Shield },
           ].map((stat, index) => (
