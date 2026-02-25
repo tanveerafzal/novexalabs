@@ -11,7 +11,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-[90vh] bg-primary-900 pt-28 pb-20 flex items-center">
+    <section id="home" className="bg-primary-900 pt-24 pb-16 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           {/* Left Column */}
