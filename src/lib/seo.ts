@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 const siteConfig = {
   name: 'NOVEXA LABS Inc',
   description: 'Expert software development and consulting with 21+ years of enterprise experience. Custom applications, dedicated teams, cloud solutions, and strategic IT consulting. Code. Consult. Conquer.',
-  url: 'https://novexalabs.com',
-  ogImage: 'https://novexalabs.com/og-image.png',
+  url: 'https://novexalabs.dev',
+  ogImage: 'https://novexalabs.dev/og-image.png',
   keywords: [
     'software development',
     'custom software',
@@ -27,7 +27,7 @@ const siteConfig = {
     'data engineering',
     'managed services',
   ],
-  authors: [{ name: 'NOVEXA LABS Inc', url: 'https://novexalabs.com' }],
+  authors: [{ name: 'NOVEXA LABS Inc', url: 'https://novexalabs.dev' }],
   creator: 'NOVEXA LABS Inc',
   publisher: 'NOVEXA LABS Inc',
   category: 'Technology',
@@ -40,7 +40,7 @@ const siteConfig = {
     country: 'Canada',
   },
   contact: {
-    email: 'hello@novexalabs.com',
+    email: 'hello@novexalabs.dev',
     phone: '+1 (555) 123-4567',
   },
   social: {

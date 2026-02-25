@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 17, 17, 17;
-  --background-rgb: 249, 249, 249;
+  --background-rgb: 255, 255, 255;
 }
 
 html {
@@ -18,43 +18,21 @@ body {
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600;
-    background-size: 200% auto;
-    animation: gradient 3s linear infinite;
+  .accent-underline {
+    @apply relative inline-block;
   }
 
-  .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-gray-200/50 shadow-sm;
-  }
-
-  .glass-strong {
-    @apply bg-white/90 backdrop-blur-2xl border border-gray-200 shadow-md;
-  }
-
-  .glass-dark {
-    @apply bg-gray-900/95 backdrop-blur-xl border border-gray-700/50;
-  }
-
-  .glow-border {
-    @apply relative;
-  }
-
-  .glow-border::before {
+  .accent-underline::after {
     content: '';
-    @apply absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary-500 to-accent-500 opacity-20 blur-sm;
+    @apply absolute bottom-0 left-0 w-12 h-1 bg-accent-500;
   }
 
-  .ai-grid {
-    background-image:
-      linear-gradient(rgba(63, 79, 173, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(63, 79, 173, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
+  .card-accent-left {
+    @apply border-l-4 border-l-accent-500;
   }
 
-  .neural-bg {
-    background-image: radial-gradient(circle at 25% 25%, rgba(63, 79, 173, 0.08) 0%, transparent 50%),
-                      radial-gradient(circle at 75% 75%, rgba(229, 176, 48, 0.08) 0%, transparent 50%);
+  .card-accent-top {
+    @apply border-t-4 border-t-primary-600;
   }
 }
 
@@ -74,9 +52,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(63, 79, 173, 0.6);
-}
-
-@keyframes gradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }

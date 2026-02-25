@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@novexalabs.com',
-    link: 'mailto:hello@novexalabs.com',
+    value: 'hello@novexalabs.dev',
+    link: 'mailto:hello@novexalabs.dev',
   },
   {
     icon: Phone,
@@ -79,21 +79,21 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-32 relative bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="contact" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
+          <span className="text-accent-500 text-sm uppercase tracking-widest mb-4 block">
             Get In Touch
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Let&apos;s Build Something <span className="text-gradient">Amazing</span>
+            Let&apos;s Build Something Amazing
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Ready to transform your business? Contact us to discuss your project and
@@ -101,15 +101,53 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+        {/* Joined Split Panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.05 }}
+          className="rounded-lg border border-gray-200 overflow-hidden"
+        >
+          <div className="grid lg:grid-cols-2">
+            {/* Left — Navy panel */}
+            <div className="bg-primary-900 p-10">
+              {/* Contact Cards */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {contactInfo.map((info) => (
+                  <a
+                    key={info.title}
+                    href={info.link}
+                    className="block p-4 rounded-lg bg-primary-800 hover:bg-primary-700 transition-colors"
+                  >
+                    <info.icon className="w-8 h-8 text-accent-400 mb-3" />
+                    <h4 className="text-white font-medium mb-1">{info.title}</h4>
+                    <p className="text-primary-300 text-sm">{info.value}</p>
+                  </a>
+                ))}
+              </div>
+
+              {/* Why Choose */}
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-4">Why Choose NOVEXA LABS?</h4>
+                <ul className="space-y-3">
+                  {[
+                    'Response within 24 hours',
+                    'Free initial consultation',
+                    'Flexible engagement models',
+                    'NDA protection available',
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-primary-300">
+                      <div className="w-2 h-2 rounded-full bg-accent-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right — White form panel */}
+            <div className="bg-white p-10">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6">
                 Send Us a Message
               </h3>
@@ -122,7 +160,7 @@ export default function Contact() {
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -133,7 +171,7 @@ export default function Contact() {
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -146,7 +184,7 @@ export default function Contact() {
                       type="tel"
                       value={formState.phone}
                       onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -156,7 +194,7 @@ export default function Contact() {
                       type="text"
                       value={formState.company}
                       onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                       placeholder="Company Name"
                     />
                   </div>
@@ -168,7 +206,7 @@ export default function Contact() {
                     <select
                       value={formState.companySize}
                       onChange={(e) => setFormState({ ...formState, companySize: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                     >
                       <option value="">Select size</option>
                       <option value="1-10">1-10 employees</option>
@@ -183,7 +221,7 @@ export default function Contact() {
                     <select
                       value={formState.service}
                       onChange={(e) => setFormState({ ...formState, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
+                      className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors"
                     >
                       <option value="">Select a service</option>
                       <option value="custom-development">Custom Development</option>
@@ -204,20 +242,20 @@ export default function Contact() {
                     rows={4}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-colors resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
 
                 {status === 'error' && (
-                  <div className="flex items-center gap-2 text-red-600 bg-red-50 px-4 py-3 rounded-xl">
+                  <div className="flex items-center gap-2 text-red-600 bg-red-50 px-4 py-3 rounded">
                     <AlertCircle className="w-5 h-5" />
                     <span>{errorMessage}</span>
                   </div>
                 )}
 
                 {status === 'success' && (
-                  <div className="flex items-center gap-2 text-green-600 bg-green-50 px-4 py-3 rounded-xl">
+                  <div className="flex items-center gap-2 text-green-600 bg-green-50 px-4 py-3 rounded">
                     <CheckCircle className="w-5 h-5" />
                     <span>Message sent successfully! We&apos;ll get back to you soon.</span>
                   </div>
@@ -226,7 +264,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-4 rounded-xl bg-gray-900 text-white font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 rounded bg-primary-700 text-white font-semibold flex items-center justify-center gap-2 hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === 'loading' ? (
                     <>
@@ -242,50 +280,8 @@ export default function Contact() {
                 </button>
               </form>
             </div>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            {/* Contact Cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {contactInfo.map((info) => (
-                <a
-                  key={info.title}
-                  href={info.link}
-                  className="bg-white rounded-2xl p-6 hover:shadow-lg transition-all group border border-gray-100"
-                >
-                  <info.icon className="w-10 h-10 text-primary-600 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-gray-900 font-medium mb-1">{info.title}</h4>
-                  <p className="text-gray-600">{info.value}</p>
-                </a>
-              ))}
-            </div>
-
-            {/* Quick Stats */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-100">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose NOVEXA LABS?</h4>
-              <ul className="space-y-3">
-                {[
-                  'Response within 24 hours',
-                  'Free initial consultation',
-                  'Flexible engagement models',
-                  'NDA protection available',
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-gray-600">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-500" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

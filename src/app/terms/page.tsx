@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Cpu } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSeoMetadata(
@@ -12,14 +12,14 @@ export const metadata: Metadata = generateSeoMetadata(
 
 export default function TermsOfService() {
   return (
-    <main className="min-h-screen bg-[rgb(249,249,249)]">
+    <main className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
+            <Link href="/" className="flex items-center gap-2">
+              <span className="w-1 h-8 bg-accent-500 rounded-full" />
+              <span className="text-2xl font-bold text-primary-800 tracking-wider">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -34,7 +34,7 @@ export default function TermsOfService() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+        <div className="rounded-lg p-8 md:p-12 border border-gray-200">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Terms of Service</h1>
           <p className="text-gray-500 mb-8">Last updated: January 8, 2026</p>
 
@@ -221,9 +221,9 @@ export default function TermsOfService() {
               <p className="text-gray-600 leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
+              <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <p className="text-gray-900 font-medium">NOVEXA LABS Inc</p>
-                <p className="text-gray-600">Email: legal@novexalabs.com</p>
+                <p className="text-gray-600">Email: legal@novexalabs.dev</p>
                 <p className="text-gray-600">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
             </section>
@@ -232,8 +232,8 @@ export default function TermsOfService() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+      <footer className="bg-primary-950 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-500 text-sm">
           &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>

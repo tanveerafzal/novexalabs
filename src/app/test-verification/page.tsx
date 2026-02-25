@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Script from 'next/script'
 import {
   ArrowLeft,
-  Cpu,
   Code2,
   CheckCircle2,
   Copy,
@@ -85,7 +84,7 @@ function CodeBlock({ code, language = 'javascript' }: { code: string; language?:
           )}
         </button>
       </div>
-      <pre className="bg-gray-900 rounded-xl p-6 overflow-x-auto border border-gray-800">
+      <pre className="bg-gray-900 rounded-lg p-6 overflow-x-auto border border-gray-800">
         <code className={`language-${language} text-sm text-gray-100 font-mono`}>
           {code}
         </code>
@@ -166,7 +165,7 @@ export default function TestVerificationPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[rgb(249,249,249)]">
+    <main className="min-h-screen bg-white">
       {/* Load TrustCredo SDK */}
       <Script
         src="https://verify.trustcredo.com/sdk/v1/trustcredo.js"
@@ -176,12 +175,12 @@ export default function TestVerificationPage() {
       />
 
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-xl border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
+            <Link href="/" className="flex items-center gap-2">
+              <span className="w-1 h-8 bg-accent-500 rounded-full" />
+              <span className="text-2xl font-bold text-primary-800 tracking-wider">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -195,19 +194,19 @@ export default function TestVerificationPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4">
+            <span className="text-accent-500 text-sm uppercase tracking-widest mb-4 block">
               SDK Integration
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              TrustCredo <span className="text-gradient">Verification SDK</span>
+              TrustCredo Verification SDK
             </h1>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto">
               Integrate identity verification into your application with just a few lines of code.
@@ -217,18 +216,18 @@ export default function TestVerificationPage() {
       </section>
 
       {/* SDK Integration Steps */}
-      <section className="py-16 relative">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Step 1 */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             className="mb-12"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-12 h-12 rounded-full bg-primary-700 flex items-center justify-center text-white font-bold text-xl">
                 1
               </div>
               <div>
@@ -241,14 +240,14 @@ export default function TestVerificationPage() {
 
           {/* Step 2 */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="mb-12"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-12 h-12 rounded-full bg-primary-700 flex items-center justify-center text-white font-bold text-xl">
                 2
               </div>
               <div>
@@ -257,7 +256,7 @@ export default function TestVerificationPage() {
               </div>
             </div>
             <CodeBlock code={codeSnippets.step2} language="javascript" />
-            <div className="mt-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+            <div className="mt-4 rounded-lg p-4 border border-gray-200">
               <h4 className="text-gray-900 font-semibold mb-2">Callback Functions:</h4>
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li className="flex items-start gap-2">
@@ -278,14 +277,14 @@ export default function TestVerificationPage() {
 
           {/* Step 3 */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="mb-12"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-12 h-12 rounded-full bg-primary-700 flex items-center justify-center text-white font-bold text-xl">
                 3
               </div>
               <div>
@@ -294,7 +293,7 @@ export default function TestVerificationPage() {
               </div>
             </div>
             <CodeBlock code={codeSnippets.step3} language="javascript" />
-            <div className="mt-4 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+            <div className="mt-4 rounded-lg p-4 border border-gray-200">
               <h4 className="text-gray-900 font-semibold mb-2">Parameters:</h4>
               <ul className="space-y-2 text-gray-600 text-sm">
                 <li className="flex items-start gap-2">
@@ -315,13 +314,13 @@ export default function TestVerificationPage() {
 
           {/* Demo Button */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="text-center"
           >
-            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+            <div className="rounded-lg p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Try It Out</h3>
               <p className="text-gray-500 mb-6">
                 Click the button below to see the verification flow in action.
@@ -329,7 +328,7 @@ export default function TestVerificationPage() {
               <button
                 onClick={handleStartVerification}
                 disabled={!sdkReady || verificationStatus === 'loading'}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded bg-primary-700 text-white font-semibold text-lg hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {verificationStatus === 'loading' ? (
                   <>
@@ -346,7 +345,7 @@ export default function TestVerificationPage() {
 
               {/* Status Message */}
               {statusMessage && (
-                <div className={`mt-4 p-4 rounded-xl ${
+                <div className={`mt-4 p-4 rounded-lg ${
                   verificationStatus === 'success'
                     ? 'bg-green-50 border border-green-200'
                     : 'bg-red-50 border border-red-200'
@@ -366,16 +365,16 @@ export default function TestVerificationPage() {
       </section>
 
       {/* Full Example */}
-      <section className="py-16 relative bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              Complete <span className="text-gradient">Example</span>
+              Complete Example
             </h2>
             <CodeBlock
               code={`<!DOCTYPE html>
@@ -422,23 +421,23 @@ export default function TestVerificationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Ready to <span className="text-gradient">Get Started</span>?
+              Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-500 mb-8">
               Contact us to get your partner API key and start integrating.
             </p>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gray-900 text-white font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded bg-primary-700 text-white font-semibold text-lg hover:bg-primary-600 transition-colors"
             >
               Request API Key
             </Link>
@@ -447,8 +446,8 @@ export default function TestVerificationPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+      <footer className="bg-primary-950 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-primary-500 text-sm">
           &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>

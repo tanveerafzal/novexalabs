@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Cpu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
@@ -26,18 +26,16 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass-strong py-3' : 'py-6 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white border-b border-gray-200 shadow-sm py-3' : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="relative">
-              <Cpu className="w-8 h-8 text-primary-600 group-hover:text-accent-600 transition-colors" />
-            </div>
-            <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
+          <a href="#home" className="flex items-center gap-2">
+            <span className="w-1 h-8 bg-accent-500 rounded-full" />
+            <span className={`text-2xl font-bold tracking-wider ${scrolled ? 'text-primary-800' : 'text-white'}`}>NOVEXA LABS</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -46,15 +44,17 @@ export default function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 hover:text-gray-900 transition-colors relative group font-medium"
+                className={`text-sm uppercase tracking-wide font-medium transition-colors relative group ${
+                  scrolled ? 'text-primary-800/70 hover:text-primary-800' : 'text-white/70 hover:text-white'
+                }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="#contact"
-              className="px-6 py-2.5 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105"
+              className="px-6 py-2.5 rounded bg-primary-700 text-white font-medium hover:bg-primary-600 transition-colors"
             >
               Get Started
             </a>
@@ -62,7 +62,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-900 p-2"
+            className={`md:hidden p-2 ${scrolled ? 'text-gray-900' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,13 +78,13 @@ export default function Navigation() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden mt-4"
             >
-              <div className="glass rounded-2xl p-4 space-y-3">
+              <div className="bg-white rounded-lg border border-gray-200 shadow-lg p-4 space-y-3">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-2 px-4 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                    className="block py-2 px-4 text-sm uppercase tracking-wide text-primary-800/70 hover:text-primary-800 hover:bg-gray-50 rounded-lg transition-colors"
                   >
                     {link.name}
                   </a>
@@ -92,7 +92,7 @@ export default function Navigation() {
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="block py-2.5 px-4 rounded-full bg-gray-900 text-white font-medium text-center"
+                  className="block py-2.5 px-4 rounded bg-primary-700 text-white font-medium text-center"
                 >
                   Get Started
                 </a>

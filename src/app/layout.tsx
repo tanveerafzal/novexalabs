@@ -40,7 +40,7 @@ export default function RootLayout({
         <JsonLd type="all" />
       </head>
       <body className={inter.className}>
-        <div className="ai-grid neural-bg min-h-screen">
+        <div className="min-h-screen bg-white">
           {children}
         </div>
       </body>
