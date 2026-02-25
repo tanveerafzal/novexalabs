@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@logithic.com',
-    link: 'mailto:hello@logithic.com',
+    value: 'hello@novexalabs.com',
+    link: 'mailto:hello@novexalabs.com',
   },
   {
     icon: Phone,
@@ -187,7 +187,7 @@ export default function Contact() {
                     >
                       <option value="">Select a service</option>
                       <option value="custom-development">Custom Development</option>
-                      <option value="fusion-teams">Fusion Teams</option>
+                      <option value="dedicated-teams">Dedicated Teams</option>
                       <option value="ai-solutions">AI/ML Solutions</option>
                       <option value="cloud-services">Cloud Services</option>
                       <option value="mobile-development">Mobile Development</option>
@@ -269,7 +269,7 @@ export default function Contact() {
 
             {/* Quick Stats */}
             <div className="bg-white rounded-2xl p-6 border border-gray-100">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Logithic Labs?</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose NOVEXA LABS?</h4>
               <ul className="space-y-3">
                 {[
                   'Response within 24 hours',

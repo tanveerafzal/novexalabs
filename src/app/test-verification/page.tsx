@@ -181,7 +181,7 @@ export default function TestVerificationPage() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -449,7 +449,7 @@ export default function TestVerificationPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>
     </main>

@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   other: {
-    'msapplication-TileColor': '#0c4a6e',
-    'theme-color': '#0c4a6e',
+    'msapplication-TileColor': '#1a1f4b',
+    'theme-color': '#1a1f4b',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0c4a6e',
+  themeColor: '#1a1f4b',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,

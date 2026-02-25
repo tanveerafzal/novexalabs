@@ -25,7 +25,7 @@ const models = [
   },
   {
     icon: Users,
-    title: 'Fusion Teams',
+    title: 'Dedicated Teams',
     description: 'Fixed monthly/quarterly billing for a dedicated team that learns your DNA.',
     gradient: 'from-purple-500 to-violet-500',
   },

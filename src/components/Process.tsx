@@ -57,7 +57,7 @@ export default function Process() {
             The Process
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            The Logithic Loop: <span className="text-gradient">Engineered for Speed, Agility & Real-World Results</span>
+            The NOVEXA Process: <span className="text-gradient">Engineered for Speed, Agility & Real-World Results</span>
           </h2>
         </motion.div>
 

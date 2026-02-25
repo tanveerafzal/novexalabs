@@ -5,7 +5,7 @@ import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSeoMetadata(
   'Terms of Service',
-  'Read the terms and conditions governing the use of Logithic Labs Inc software development and staffing services.',
+  'Read the terms and conditions governing the use of NOVEXA LABS Inc software development and staffing services.',
   '/terms',
   ['terms of service', 'terms and conditions', 'legal agreement', 'service agreement']
 )
@@ -19,7 +19,7 @@ export default function TermsOfService() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -42,7 +42,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Agreement to Terms</h2>
               <p className="text-gray-600 leading-relaxed">
-                Welcome to Logithic Labs Inc. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website, products, and services (collectively, &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
+                Welcome to NOVEXA LABS Inc. These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website, products, and services (collectively, &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
               </p>
               <p className="text-gray-600 leading-relaxed mt-4">
                 If you are using our Services on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms, in which case &quot;you&quot; or &quot;your&quot; shall refer to such entity.
@@ -52,7 +52,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Description of Services</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Logithic Labs Inc provides software development, staffing, and technology consulting services, including but not limited to:
+                NOVEXA LABS Inc provides software development, staffing, and technology consulting services, including but not limited to:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
                 <li>Custom software development and engineering</li>
@@ -98,7 +98,7 @@ export default function TermsOfService() {
 
               <h3 className="text-xl font-medium text-gray-800 mb-3">6.1 Our Intellectual Property</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The Services, including all content, features, and functionality, are owned by Logithic Labs Inc and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.
+                The Services, including all content, features, and functionality, are owned by NOVEXA LABS Inc and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.
               </p>
 
               <h3 className="text-xl font-medium text-gray-800 mb-3">6.2 Client Work Product</h3>
@@ -145,17 +145,17 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Limitation of Liability</h2>
               <p className="text-gray-600 leading-relaxed">
-                TO THE MAXIMUM EXTENT PERMITTED BY LAW, LOGITHIC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, NOVEXA LABS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
               </p>
               <p className="text-gray-600 leading-relaxed mt-4">
-                OUR TOTAL LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS SHALL NOT EXCEED THE AMOUNTS PAID BY YOU TO LOGITHIC IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+                OUR TOTAL LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATING TO THESE TERMS SHALL NOT EXCEED THE AMOUNTS PAID BY YOU TO NOVEXA LABS IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Indemnification</h2>
               <p className="text-gray-600 leading-relaxed">
-                You agree to indemnify, defend, and hold harmless Logithic Labs Inc and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of the Services, violation of these Terms, or infringement of any third-party rights.
+                You agree to indemnify, defend, and hold harmless NOVEXA LABS Inc and its officers, directors, employees, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to your use of the Services, violation of these Terms, or infringement of any third-party rights.
               </p>
             </section>
 
@@ -212,7 +212,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">18. Entire Agreement</h2>
               <p className="text-gray-600 leading-relaxed">
-                These Terms, together with the Privacy Policy and any applicable Service Agreements, constitute the entire agreement between you and Logithic Labs Inc regarding the use of our Services and supersede all prior agreements and understandings.
+                These Terms, together with the Privacy Policy and any applicable Service Agreements, constitute the entire agreement between you and NOVEXA LABS Inc regarding the use of our Services and supersede all prior agreements and understandings.
               </p>
             </section>
 
@@ -222,8 +222,8 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                <p className="text-gray-900 font-medium">Logithic Labs Inc</p>
-                <p className="text-gray-600">Email: legal@logithic.com</p>
+                <p className="text-gray-900 font-medium">NOVEXA LABS Inc</p>
+                <p className="text-gray-600">Email: legal@novexalabs.com</p>
                 <p className="text-gray-600">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
             </section>
@@ -234,7 +234,7 @@ export default function TermsOfService() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>
     </main>

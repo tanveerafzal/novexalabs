@@ -1,15 +1,15 @@
 import { Metadata } from 'next'
 
 const siteConfig = {
-  name: 'Logithic Labs Inc',
-  description: 'Transform your business with cutting-edge AI-driven software development, dedicated teams, and elite staffing solutions tailored to your needs.',
-  url: 'https://logithic.com',
-  ogImage: 'https://logithic.com/og-image.png',
+  name: 'NOVEXA LABS Inc',
+  description: 'Expert software development and consulting with 21+ years of enterprise experience. Custom applications, dedicated teams, cloud solutions, and strategic IT consulting. Code. Consult. Conquer.',
+  url: 'https://novexalabs.com',
+  ogImage: 'https://novexalabs.com/og-image.png',
   keywords: [
     'software development',
     'custom software',
-    'AI solutions',
-    'machine learning',
+    'software consulting',
+    'enterprise software',
     'dedicated teams',
     'IT staffing',
     'tech talent',
@@ -18,18 +18,18 @@ const siteConfig = {
     'web development',
     'DevOps',
     'digital transformation',
-    'software consulting',
-    'enterprise software',
-    'startup development',
-    'MVP development',
-    'product development',
     'technology consulting',
-    'offshore development',
-    'nearshore development',
+    'IT modernization',
+    'product development',
+    'MVP development',
+    'startup development',
+    'AI solutions',
+    'data engineering',
+    'managed services',
   ],
-  authors: [{ name: 'Logithic Labs Inc', url: 'https://logithic.com' }],
-  creator: 'Logithic Labs Inc',
-  publisher: 'Logithic Labs Inc',
+  authors: [{ name: 'NOVEXA LABS Inc', url: 'https://novexalabs.com' }],
+  creator: 'NOVEXA LABS Inc',
+  publisher: 'NOVEXA LABS Inc',
   category: 'Technology',
   locale: 'en_CA',
   address: {
@@ -40,13 +40,13 @@ const siteConfig = {
     country: 'Canada',
   },
   contact: {
-    email: 'hello@logithic.com',
+    email: 'hello@novexalabs.com',
     phone: '+1 (555) 123-4567',
   },
   social: {
-    twitter: '@logithic',
-    linkedin: 'https://linkedin.com/company/logithic',
-    github: 'https://github.com/logithic',
+    twitter: '@novexalabs',
+    linkedin: 'https://linkedin.com/company/novexalabs',
+    github: 'https://github.com/novexalabs',
   },
 }
 
@@ -56,7 +56,7 @@ export function generateMetadata(
   path?: string,
   additionalKeywords?: string[]
 ): Metadata {
-  const pageTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | AI-Powered Software Development & Staffing Solutions`
+  const pageTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} | Software Development & Consulting`
   const pageDescription = description || siteConfig.description
   const pageUrl = path ? `${siteConfig.url}${path}` : siteConfig.url
   const keywords = [...siteConfig.keywords, ...(additionalKeywords || [])]
@@ -85,7 +85,7 @@ export function generateMetadata(
           url: siteConfig.ogImage,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} - AI-Powered Software Development`,
+          alt: `${siteConfig.name} - Software Development & Consulting`,
         },
       ],
     },

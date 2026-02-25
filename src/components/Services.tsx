@@ -1,10 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import {
   Code2,
-  Users,
   Cpu,
   Cloud,
   Smartphone,
@@ -81,14 +79,6 @@ const services = [
     gradient: 'from-rose-500 to-pink-500',
   },
   {
-    icon: Users,
-    title: 'Fusion Teams',
-    subtitle: 'Fusion Teams',
-    description: 'Plug-and-play Agile teams that function as a seamless extension of your workforce.',
-    gradient: 'from-indigo-500 to-violet-500',
-    href: '/fusion-teams',
-  },
-  {
     icon: UserCheck,
     title: 'Talent Calibration',
     subtitle: 'IT Staffing',
@@ -116,7 +106,7 @@ export default function Services() {
             Solutions That <span className="text-gradient">Drive Growth</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end technology services engineered to transform complexity into competitive advantage.
+            End-to-end software development and consulting services engineered to transform complexity into competitive advantage.
           </p>
         </motion.div>
 
@@ -140,11 +130,6 @@ export default function Services() {
                 <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
-                {service.href && (
-                  <p className={`text-sm font-medium mt-3 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                    Learn more →
-                  </p>
-                )}
               </>
             )
 
@@ -157,15 +142,9 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="group relative"
               >
-                {service.href ? (
-                  <Link href={service.href} className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col block">
-                    {CardContent}
-                  </Link>
-                ) : (
-                  <div className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col">
-                    {CardContent}
-                  </div>
-                )}
+                <div className="glass rounded-2xl p-6 h-full hover:shadow-xl transition-all duration-500 hover:scale-105 flex flex-col">
+                  {CardContent}
+                </div>
               </motion.div>
             )
           })}

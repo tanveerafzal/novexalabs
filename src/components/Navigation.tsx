@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'Services', href: '#services' },
-  { name: 'Fusion Teams', href: '/fusion-teams' },
   { name: 'About', href: '#about' },
   { name: 'Process', href: '#process' },
   { name: 'Contact', href: '#contact' },
@@ -38,7 +37,7 @@ export default function Navigation() {
             <div className="relative">
               <Cpu className="w-8 h-8 text-primary-600 group-hover:text-accent-600 transition-colors" />
             </div>
-            <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+            <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
           </a>
 
           {/* Desktop Navigation */}

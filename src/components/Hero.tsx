@@ -20,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
         >
-          <span className="text-gradient">Logithic Labs</span>
+          <span className="text-gradient">NOVEXA LABS</span>
         </motion.h1>
 
         {/* Tagline */}
@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8"
         >
-          Intelligence Engineered. Delivered Now.
+          Code. Consult. Conquer.
         </motion.h2>
 
         {/* Description */}
@@ -40,7 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed"
         >
-          We build intelligent, scalable software and assemble elite teams that accelerate your edge in an AI-powered world. 50+ years combined architecting mission-critical systems across every major sector — from telecom and finance to public sector, healthcare, and logistics. We turn complexity into velocity: custom code, AI layers, cloud-native foundations — zero legacy drag, full future-proof portability.
+          We build world-class software and provide expert consulting that drives real business results. 21+ years architecting mission-critical systems across every major sector — from telecom and finance to public sector, healthcare, and logistics. We turn complexity into velocity: custom code, cloud-native foundations, strategic consulting — zero legacy drag, full future-proof portability.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -73,7 +73,7 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
           {[
-            { value: '20+', label: 'Years Experience', icon: Zap },
+            { value: '21+', label: 'Years Experience', icon: Zap },
             { value: '98%', label: 'Client Satisfaction', icon: Sparkles },
             { value: '24/7', label: 'Support Available', icon: Shield },
           ].map((stat, index) => (

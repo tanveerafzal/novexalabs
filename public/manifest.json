@@ -1,11 +1,11 @@
 {
-  "name": "Logithic Labs Inc - AI-Powered Software Development & Staffing",
-  "short_name": "Logithic Labs",
-  "description": "Transform your business with cutting-edge AI-driven software development, dedicated teams, and elite staffing solutions.",
+  "name": "NOVEXA LABS - Software Development & Consulting",
+  "short_name": "NOVEXA LABS",
+  "description": "Expert software development and consulting services with 21+ years of enterprise experience. Code. Consult. Conquer.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#082f49",
-  "theme_color": "#0c4a6e",
+  "background_color": "#0f1333",
+  "theme_color": "#1a1f4b",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

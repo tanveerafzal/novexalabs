@@ -51,7 +51,7 @@ export default function WhyUs() {
             Value Proposition
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Why <span className="text-gradient">Logithic</span>?
+            Why <span className="text-gradient">NOVEXA</span>?
           </h2>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function WhyUs() {
           className="text-center mt-16"
         >
           <p className="text-gray-600 mb-6 text-lg">
-            Ready to experience the Logithic difference?
+            Ready to experience the NOVEXA difference?
           </p>
           <a
             href="#contact"

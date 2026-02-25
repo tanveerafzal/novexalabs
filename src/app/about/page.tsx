@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -118,7 +118,7 @@ export default function AboutPage() {
               About Us
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              The DNA of <span className="text-gradient">Logithic Labs</span>
+              The DNA of <span className="text-gradient">NOVEXA LABS</span>
             </h1>
           </motion.div>
         </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">The Backstory</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Logithic Labs was founded on a simple premise: <span className="text-gray-900 font-semibold">Experience matters, but speed is currency.</span> Founded by two industry veterans with over 50 years of combined experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. We have navigated the complexities of multi-vendor landscapes and the rigors of government compliance and highly regulated industries. Now, we bring that enterprise-grade discipline to the agile digital world.
+              NOVEXA LABS was founded on a simple premise: <span className="text-gray-900 font-semibold">Experience matters, but speed is currency.</span> With 21+ years of hands-on experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. We have navigated the complexities of multi-vendor landscapes and the rigors of government compliance and highly regulated industries. Now, we bring that enterprise-grade discipline to the agile digital world.
             </p>
           </motion.div>
         </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact logic that powers the future.
+                <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact software and strategy that powers the future.
               </p>
             </motion.div>
 
@@ -174,7 +174,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Be the essential partner for organizations leading in the AI era — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
+                Be the essential partner for organizations that demand excellence — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
               </p>
             </motion.div>
           </div>
@@ -296,7 +296,7 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>
     </main>

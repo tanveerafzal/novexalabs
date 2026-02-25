@@ -20,7 +20,7 @@ export default function About() {
             About Us
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            The DNA of <span className="text-gradient">Logithic Labs</span>
+            The DNA of <span className="text-gradient">NOVEXA LABS</span>
           </h2>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function About() {
         >
           <div className="bg-white rounded-3xl p-8 md:p-10 text-center shadow-sm border border-gray-100">
             <p className="text-lg text-gray-600 leading-relaxed">
-              Logithic Labs was founded on a simple premise: <span className="text-gray-900 font-semibold">Experience matters, but speed is currency.</span> Founded by two industry veterans with over 50 years of combined experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. Now, we bring that enterprise-grade discipline to the agile digital world.
+              NOVEXA LABS was founded on a simple premise: <span className="text-gray-900 font-semibold">Experience matters, but speed is currency.</span> With 21+ years of hands-on experience, we have architected multi-million-dollar systems for the Public Sector, Telecommunications, Finance, and Healthcare. Now, we bring that enterprise-grade discipline to the agile digital world.
             </p>
           </div>
         </motion.div>
@@ -53,7 +53,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact logic that powers the future.
+              <span className="text-gradient font-semibold">To demystify the complex.</span> We exist to strip away the bloat of traditional IT consulting and deliver lean, high-impact software and strategy that powers the future.
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Be the essential partner for organizations leading in the AI era — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
+              Be the essential partner for organizations that demand excellence — where tech disappears into seamless performance, teams feel like natural extensions, and innovation never waits.
             </p>
           </motion.div>
         </div>

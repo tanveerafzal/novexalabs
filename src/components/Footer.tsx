@@ -6,7 +6,7 @@ import { Cpu, Github, Linkedin, Twitter } from 'lucide-react'
 const footerLinks = {
   services: [
     { name: 'Custom Development', href: '#services' },
-    { name: 'Fusion Teams', href: '/fusion-teams' },
+    { name: 'Dedicated Teams', href: '#services' },
     { name: 'AI/ML Solutions', href: '#services' },
     { name: 'Cloud Services', href: '#services' },
     { name: 'IT Staffing', href: '#services' },
@@ -32,9 +32,9 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: 'Twitter', icon: Twitter, href: '#' },
-  { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'GitHub', icon: Github, href: '#' },
+  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/novexalabs' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/novexalabs' },
+  { name: 'GitHub', icon: Github, href: 'https://github.com/novexalabs' },
 ]
 
 export default function Footer() {
@@ -46,10 +46,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-6">
               <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
             </a>
             <p className="text-gray-600 mb-6 max-w-sm">
-              Intelligence Engineered. Delivered Now.
+              Code. Consult. Conquer.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -138,7 +138,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-100">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
+              &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm">
               Crafted with precision

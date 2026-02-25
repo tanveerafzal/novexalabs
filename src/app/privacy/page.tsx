@@ -5,7 +5,7 @@ import { generateMetadata as generateSeoMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = generateSeoMetadata(
   'Privacy Policy',
-  'Learn how Logithic Labs Inc collects, uses, and protects your personal information. Our commitment to data privacy and security.',
+  'Learn how NOVEXA LABS Inc collects, uses, and protects your personal information. Our commitment to data privacy and security.',
   '/privacy',
   ['privacy policy', 'data protection', 'GDPR', 'data privacy', 'personal information']
 )
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2 group">
               <Cpu className="w-8 h-8 text-primary-600" />
-              <span className="text-2xl font-bold text-gradient">Logithic Labs</span>
+              <span className="text-2xl font-bold text-gradient">NOVEXA LABS</span>
             </Link>
             <Link
               href="/"
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Introduction</h2>
               <p className="text-gray-600 leading-relaxed">
-                Logithic Labs Inc (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or engage with us in any way.
+                NOVEXA LABS Inc (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or engage with us in any way.
               </p>
               <p className="text-gray-600 leading-relaxed mt-4">
                 By accessing or using our services, you agree to this Privacy Policy. If you do not agree with our policies and practices, please do not use our services.
@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
                 <li><strong className="text-gray-800">Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-4">
-                To exercise these rights, please contact us at privacy@logithic.com.
+                To exercise these rights, please contact us at privacy@novexalabs.com.
               </p>
             </section>
 
@@ -184,8 +184,8 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                <p className="text-gray-900 font-medium">Logithic Labs Inc</p>
-                <p className="text-gray-600">Email: privacy@logithic.com</p>
+                <p className="text-gray-900 font-medium">NOVEXA LABS Inc</p>
+                <p className="text-gray-600">Email: privacy@novexalabs.com</p>
                 <p className="text-gray-600">Address: 6733 Mississauga Rd Suite 700, Mississauga, ON, Canada</p>
               </div>
             </section>
@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
       {/* Footer */}
       <footer className="border-t border-gray-100 py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Logithic Labs Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} NOVEXA LABS Inc. All rights reserved.
         </div>
       </footer>
     </main>
