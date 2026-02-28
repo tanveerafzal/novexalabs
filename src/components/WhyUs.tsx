@@ -103,10 +103,12 @@ export default function WhyUs() {
             Ready to experience the NOVEXA difference?
           </p>
           <a
-            href="#contact"
+            href="https://cal.com/novexalabs/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded bg-accent-500 text-primary-900 font-semibold text-lg hover:bg-accent-400 transition-colors"
           >
-            Let&apos;s Talk
+            Let&apos;s Talk — Book 30 Min
           </a>
         </motion.div>
       </div>

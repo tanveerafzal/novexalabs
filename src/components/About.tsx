@@ -78,7 +78,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          className="text-center"
+          className="text-center flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
             href="/about"
@@ -87,6 +87,14 @@ export default function About() {
             Explore Our Values & Expertise
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
+          <a
+            href="https://cal.com/novexalabs/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded border-2 border-primary-400 text-white font-semibold text-lg hover:bg-primary-800 transition-colors"
+          >
+            Let&apos;s Talk — Book 30 Min
+          </a>
         </motion.div>
       </div>
     </section>

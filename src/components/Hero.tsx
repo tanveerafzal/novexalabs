@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Calendar } from 'lucide-react'
 
 const stats = [
   { value: '21+', label: 'Years Experience' },
@@ -59,11 +59,13 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="#contact"
+                href="https://cal.com/novexalabs/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group px-8 py-4 rounded bg-accent-500 text-primary-900 font-semibold text-lg hover:bg-accent-400 transition-colors flex items-center justify-center gap-2"
               >
-                Ignite Your Next Leap
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Calendar className="w-5 h-5" />
+                Let&apos;s Talk — Book 30 Min
               </a>
               <a
                 href="#services"

@@ -103,10 +103,12 @@ export default function Process() {
           className="text-center mt-16"
         >
           <a
-            href="#contact"
+            href="https://cal.com/novexalabs/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded bg-primary-700 text-white font-semibold text-lg hover:bg-primary-600 transition-colors"
           >
-            Start Your Journey
+            Let&apos;s Talk — Book 30 Min
           </a>
         </motion.div>
       </div>
